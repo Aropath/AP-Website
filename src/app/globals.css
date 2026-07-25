@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Self-hosted type system.
+  Drop the licensed Satoshi, General Sans, and JetBrains Mono woff2 files
+  into /public/fonts to activate them — until then, each falls back
+  gracefully to a close system stack so the site never blocks on a
+  missing asset.
+*/
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Variable.woff2") format("woff2");
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+:root {
+  --font-satoshi: "Satoshi", "General Sans", "Inter", system-ui, sans-serif;
+  --font-generalsans: "General Sans", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* {
+  border-color: theme("colors.line");
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: theme("colors.bg.DEFAULT");
+  color: theme("colors.ink.DEFAULT");
+  font-family: var(--font-generalsans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: #f5e5a4;
+  color: #111827;
+}
+
+:focus-visible {
+  outline: 2px solid rgba(17, 24, 39, 0.5);
+  outline-offset: 2px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

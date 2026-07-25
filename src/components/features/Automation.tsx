@@ -1,0 +1,53 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+import { fadeUp, slideFromLeft, slideFromRight, staggerContainer } from "@/animations/variants";
+import { Container } from "@/components/layout/Container";
+import { AUTOMATION_FEATURES } from "@/constants/features";
+
+export function Automation() {
+  return (
+    <section className="py-24">
+      <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={slideFromLeft}
+        >
+          <span className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+            Growth Plans
+          </span>
+          <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
+            Set up tracking once. Grow conversions continuously.
+          </h2>
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-muted">
+            The same lightweight SDK that records your initial conversion metrics scales to process millions of monthly user sessions — with every bottleneck and revenue lift visible on your growth canvas.
+          </p>
+        </motion.div>
+
+        <motion.ul
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex flex-col gap-4"
+        >
+          {AUTOMATION_FEATURES.map((item) => (
+            <motion.li
+              key={item}
+              variants={fadeUp}
+              className="flex items-start gap-3 rounded-xl2 border border-line bg-card p-5 shadow-soft"
+            >
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-saffron/60">
+                <Check className="h-3.5 w-3.5 text-ink" />
+              </span>
+              <span className="text-[0.95rem] leading-relaxed text-ink">{item}</span>
+            </motion.li>
+          ))}
+        </motion.ul>
+      </Container>
+    </section>
+  );
+}
