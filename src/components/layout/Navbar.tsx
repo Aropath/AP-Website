@@ -52,8 +52,8 @@ export function Navbar() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   pathname === item.href
-                    ? "bg-saffron/60 text-ink"
-                    : "text-ink-muted hover:bg-saffron/30 hover:text-ink"
+                    ? "text-ink font-semibold"
+                    : "text-ink-muted hover:text-ink"
                 )}
               >
                 {item.label}
@@ -65,7 +65,7 @@ export function Navbar() {
             <Button variant="ghost" size="sm">
               Contact
             </Button>
-            <Button variant="accent" size="sm" withArrow>
+            <Button variant="navy" size="sm" withArrow>
               Get Started
             </Button>
           </div>
@@ -96,7 +96,12 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-base font-medium text-ink hover:bg-saffron/30"
+                  className={cn(
+                    "rounded-lg px-3 py-2.5 text-base font-medium transition-colors",
+                    pathname === item.href
+                      ? "text-ink font-semibold"
+                      : "text-ink-muted hover:text-ink"
+                  )}
                 >
                   {item.label}
                 </Link>
@@ -104,7 +109,7 @@ export function Navbar() {
             </nav>
             <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
               <Button variant="outline" size="sm">Contact</Button>
-              <Button variant="accent" size="sm" withArrow>Get Started</Button>
+              <Button variant="navy" size="sm" withArrow>Get Started</Button>
             </div>
           </motion.div>
         )}

@@ -40,16 +40,6 @@ export function Hero() {
 
       <Container className="relative">
         <div className="flex flex-col items-center text-center">
-          <motion.span
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-card/80 px-4 py-1.5 text-xs font-medium text-ink-muted shadow-soft backdrop-blur"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-saffron-hover" />
-            Now generally available for enterprise teams
-          </motion.span>
-
           <h1
             ref={headingRef}
             className="max-w-4xl font-display text-display-2xl font-medium text-ink text-balance"
@@ -75,11 +65,11 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <MagneticButton>
-              <Button variant="accent" size="lg" withArrow>
+              <Button variant="navy" size="lg" withArrow>
                 Get Started Free
               </Button>
             </MagneticButton>
-            <Button variant="outline" size="lg">
+            <Button variant="glass" size="lg">
               <span>Watch a 2-min demo</span>
               <ArrowRight className="h-4 w-4" />
             </Button>
@@ -111,12 +101,26 @@ export function Hero() {
           </motion.div>
         </div>
 
+        {/* Enterprise Edition Badge */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={5}
+          className="mt-14 flex justify-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-line bg-card/80 px-4 py-1.5 text-xs font-medium text-ink-muted shadow-soft backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-teal-logo animate-pulse-soft" />
+            Enterprise Edition Available
+          </span>
+        </motion.div>
+
         {/* Stylized Dashboard Mockup Panel */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto mt-20 hidden max-w-4xl overflow-hidden rounded-xl3 border border-line bg-card/80 p-5 shadow-card backdrop-blur-md sm:block"
+          className="relative mx-auto mt-6 hidden max-w-4xl overflow-hidden rounded-xl3 border border-line bg-card/80 p-5 shadow-card backdrop-blur-md sm:block"
         >
           {/* Mock Window Controls & URL bar */}
           <div className="flex items-center justify-between border-b border-line pb-4 mb-5">

@@ -5,9 +5,8 @@ import { Philosophy } from "@/components/home/Philosophy";
 import { CoreValues } from "@/components/home/CoreValues";
 import { ProductsOverview } from "@/components/home/ProductsOverview";
 import { HowItWorks } from "@/components/home/HowItWorks";
-import { PlatformBenefits } from "@/components/home/PlatformBenefits";
-import { Statistics } from "@/components/home/Statistics";
-import { Testimonials } from "@/components/home/Testimonials";
+// import { Statistics } from "@/components/home/Statistics";
+// import { Testimonials } from "@/components/home/Testimonials";
 import { CTASection } from "@/components/layout/CTASection";
 
 export default function HomePage() {
@@ -20,9 +19,8 @@ export default function HomePage() {
       <CoreValues />
       <ProductsOverview />
       <HowItWorks />
-      <PlatformBenefits />
-      <Statistics />
-      <Testimonials />
+      {/* <Statistics /> */}
+      {/* <Testimonials /> */}
       <CTASection />
     </>
   );
