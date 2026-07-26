@@ -20,10 +20,10 @@ export function Automation() {
             Growth Plans
           </span>
           <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
-            Set up tracking once. Grow conversions continuously.
+            Set up once.<br></br> Grow continuously.
           </h2>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-muted">
-            The same lightweight SDK that records your initial conversion metrics scales to process millions of monthly user sessions — with every bottleneck and revenue lift visible on your growth canvas.
+            The same foundation we build your software on scales to support everything that follows — every product shipped, every result tracked, visible in one place, as it happens.
           </p>
         </motion.div>
 

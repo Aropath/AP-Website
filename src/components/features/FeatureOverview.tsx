@@ -11,8 +11,8 @@ export function FeatureOverview() {
       <Container>
         <SectionHeader
           eyebrow="Overview"
-          title="Analytics built to be acted upon"
-          description="AroPath's foundation is a set of capabilities — analytics, insights, and checklists — designed to turn traffic data directly into conversions."
+          title="Precision and intention, carried through everything."
+          description="AroPath works across software, insight, and product. Different disciplines, the same level of care."
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {FEATURE_OVERVIEW.map((f, i) => (
@@ -30,8 +30,8 @@ export function AICapabilities() {
       <Container>
         <SectionHeader
           eyebrow="AI Capabilities"
-          title="Models tuned for website growth"
-          description="Not a generic metrics dashboard — a set of capabilities purpose-built for the funnels, sessions, and drop-offs your team needs to optimize."
+          title="Models tuned for real growth"
+          description="Not a generic dashboard — a set of capabilities built for the decisions your team actually needs to make."
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {AI_CAPABILITIES.map((f, i) => (

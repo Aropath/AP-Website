@@ -20,8 +20,8 @@ export default function FeaturesPage() {
     <>
       <PageHero
         eyebrow="Features"
-        title="Every capability your growth engine needs to be trusted"
-        description="From session intelligence to audit-ready security, AroPath is built as one connected platform — not a collection of disconnected tools."
+        title="Every capabilty your growth engine needs to be trusted "
+        description="Every piece of what we make is built with intention. Software, data, and security, all pointed at the same thing: results that last."
       />
       <FeatureOverview />
       <AICapabilities />

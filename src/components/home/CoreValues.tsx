@@ -12,7 +12,7 @@ export function CoreValues() {
         <SectionHeader
           eyebrow="Core values"
           title="What we optimize for, in order"
-          description="These aren't posters on a wall. They're the tie-breakers we use when two good options are in tension."
+          description="The standard we apply, every time it matters."
         />
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {CORE_VALUES.map((value, i) => (

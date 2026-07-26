@@ -15,21 +15,21 @@ export const TRUSTED_COMPANIES = [
 export const CORE_VALUES = [
   {
     icon: Sparkles,
-    title: "AI-First Interpretation",
+    title: "Built to Interpret, Not Just Collect",
     description:
-      "We believe analytics should interpret data, not just collect it. We show you the answers, not just the charts.",
+      "We believe software should make sense of what it captures, not just store it. We show you answers, not just numbers.",
   },
   {
     icon: Target,
-    title: "Action-Oriented Insights",
+    title: "Action-Oriented Content",
     description:
-      "Every piece of data we surface is paired with a clear, prioritised next step so you always know what to fix.",
+      "Everything we build comes with a clear next step — so you always know what to fix, ship, or change.",
   },
   {
     icon: TrendingUp,
     title: "Automated Growth Loop",
     description:
-      "Your site's growth plan automatically updates itself as visitor behavior and patterns change.",
+      "Every system we build adapts on its own terms — continuously, and without the need for manual oversight.",
   },
   {
     icon: FileText,

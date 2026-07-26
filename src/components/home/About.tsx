@@ -20,7 +20,7 @@ export function About() {
             About AroPath
           </span>
           <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
-            We started with one question: why are teams still decoding charts to grow their site?
+            We started with one belief: "Real results are always within reach, not just hoped for."
           </h2>
         </motion.div>
 
@@ -32,10 +32,10 @@ export function About() {
           className="flex flex-col gap-6 text-lg leading-relaxed text-ink-muted"
         >
           <p>
-            Most analytics tools dump raw numbers and complex charts onto dashboards and leave you to guess what to fix. We built AroPath around the idea that data should point directly to action.
+            Most tools leave businesses with more to figure out, not less — scattered software, disconnected data, no clear next step. We built AroPath around one idea: every tool we build should point directly to action.
           </p>
           <p>
-            We track sessions and conversions, then generate a prioritized growth plan that shows you exactly what moves the needle. It&apos;s the difference between staring at charts and actually growing your business.
+            We build the software, shape the data, and create the products behind it — each one built to show you exactly what to do next. It's the difference between having tools and actually growing.
           </p>
         </motion.div>
       </Container>

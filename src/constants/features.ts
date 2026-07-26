@@ -13,21 +13,21 @@ import type { FeatureItem, FAQItem, UseCase } from "@/types";
 export const FEATURE_OVERVIEW: FeatureItem[] = [
   {
     icon: BarChart3,
-    title: "Smart Website Analytics",
+    title: "Smart, Reliable Software",
     description:
-      "The core numbers, tracked automatically and tied directly to business revenue outcomes.",
+      "The core systems a business depends on, built and maintained automatically, day after day.",
   },
   {
     icon: Sparkles,
     title: "AI-Powered Insights",
     description:
-      "AroPath automatically reads the data so your team doesn't have to spend hours interpreting charts.",
+      "AroPath interprets the data automatically, so your team does not have to spend hours reviewing it manually.",
   },
   {
     icon: Target,
     title: "Living Growth Plans",
     description:
-      "A prioritized action checklist that automatically updates as your site traffic and behavior shifts.",
+      "A prioritized action plan, continuously refined to reflect the latest conditions, without requiring manual updates.",
   },
 ];
 
@@ -35,26 +35,26 @@ export const AI_CAPABILITIES: FeatureItem[] = [
   {
     icon: Sparkles,
     title: "Revenue Opportunities",
-    description: "Identify high-value pages causing drop-offs and see the immediate revenue impact of a fix.",
+    description: "Identify where value is being lost across the business, and see the impact of fixing it, before you commit resources.",
   },
   {
     icon: TrendingUp,
     title: "Bottleneck Detection",
-    description: "Catch check-out issues, broken script loads, or slow load times before they impact conversions.",
+    description: "Catch issues, delays, or breakdowns early, before they have a chance to affect results downstream.",
   },
   {
     icon: Target,
     title: "Prioritized Recommendations",
-    description: "AroPath prioritises issues by their potential ROI, giving you a clear path forward.",
+    description: "AroPath ranks issues by potential impact, giving your team a clear, actionable path forward.",
   },
 ];
 
 export const AUTOMATION_FEATURES = [
   "AI Generated Action Checklist",
-  "Estimated ROI & Revenue Forecasts",
+  "Custom Software & Product Builds",
+  "Estimated Impact & Revenue Forecasts",
   "Progress Tracking & Completion Audits",
-  "Automated Weekly & Monthly PDF Summaries",
-  "Customizable Report Triggers for Stakeholders",
+  "Automated Weekly & Monthly Summaries",
 ];
 
 export const ENTERPRISE_FEATURES: FeatureItem[] = [
@@ -70,14 +70,14 @@ export const ENTERPRISE_FEATURES: FeatureItem[] = [
   },
   {
     icon: Zap,
-    title: "Dedicated Success Manager",
-    description: "Direct engineering support for complex setups, custom events tracking, and SDK optimizations.",
+    title: "Advanced Technical Support",
+    description: "Priority support for complex setups, integrations, and technical requirements.",
   },
 ];
 
 export const SECURITY_POINTS = [
   { title: "SAML SSO Support", description: "Enforce company-wide identity policies for all project spaces." },
-  { title: "Encrypted Data", description: "All visitor data is encrypted in transit and at rest with TLS 1.3 and AES-256." },
+  { title: "Encrypted Data", description: "All data is encrypted in transit and at rest with TLS 1.3 and AES-256." },
   { title: "Immutable Audit Logs", description: "Every setting change, report export, and checklist edit is logged permanently." },
 ];
 
@@ -112,9 +112,9 @@ export const DEVELOPER_FEATURES = [
 ];
 
 export const USE_CASES: UseCase[] = [
-  { tag: "SaaS", title: "Signup funnel optimisation", description: "Find out exactly where prospects drop off in your registration flow and increase conversion." },
-  { tag: "E-Commerce", title: "Checkout drop-off recovery", description: "Identify checkout errors, payment gateway slow-downs, and optimize overall basket size." },
-  { tag: "Agencies", title: "Automated client reporting", description: "Provide professional, white-labelled PDF summaries directly to your clients every single month." },
+  { tag: "SaaS", title: "Faster product iteration", description: "Ship features with confidence, backed by data on what's actually working." },
+  { tag: "E-Commerce", title: "Custom storefronts", description: "From storefront builds to checkout optimization, one team handles both." },
+  { tag: "Agencies", title: "White-labelled delivery, end to end", description: "Build client sites and report on their performance, without switching tools." },
 ];
 
 export const FEATURES_FAQ: FAQItem[] = [

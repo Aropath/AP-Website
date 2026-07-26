@@ -14,7 +14,7 @@ interface CTASectionProps {
 
 export function CTASection({
   title = "Ready to unlock your next growth path?",
-  description = "Connect your site in under 6 minutes and let AroPath reveal exactly what to fix next to lift your conversion rates.",
+  description = "Get set up in minutes, and let AroPath show you exactly what to build, fix, or ship next — all pointed toward real growth.",
 }: CTASectionProps) {
   return (
     <section id="contact" className="relative overflow-hidden py-28 border-t border-line">

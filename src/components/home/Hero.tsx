@@ -44,7 +44,7 @@ export function Hero() {
             ref={headingRef}
             className="max-w-4xl font-display text-display-2xl font-medium text-ink text-balance"
           >
-            Stop reading dashboards. Start following a path to revenue.
+            Every ambition needs a path. The right one delivers revenue.
           </h1>
 
           <motion.p
@@ -54,7 +54,7 @@ export function Hero() {
             custom={2}
             className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted"
           >
-            AroPath turns raw visitor data into a prioritized, AI-written growth plan — so every week you know exactly what to fix next and why it matters to revenue.
+            Ambition is everywhere. Direction is rare. AroPath builds the software and systems behind numbers that keep climbing.
           </motion.p>
 
           <motion.div
