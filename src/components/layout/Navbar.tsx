@@ -62,9 +62,9 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-            <Button variant="ghost" size="sm">
+            <Link href="/contact"><Button variant="ghost" size="sm">
               Contact
-            </Button>
+            </Button></Link>
             <Button variant="navy" size="sm" withArrow>
               Get Started
             </Button>
@@ -108,7 +108,7 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
-              <Button variant="outline" size="sm">Contact</Button>
+              <Link href="/contact" onClick={() => setMobileOpen(false)}><Button variant="outline" size="sm">Contact</Button></Link>
               <Button variant="navy" size="sm" withArrow>Get Started</Button>
             </div>
           </motion.div>
