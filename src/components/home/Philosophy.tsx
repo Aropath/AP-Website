@@ -28,24 +28,25 @@ export function Philosophy() {
                 key={point.title}
                 variants={fadeUp}
                 custom={i}
-                className="group relative overflow-hidden rounded-xl3 border border-white/10 p-9 shadow-card transition-all duration-500 hover:shadow-2xl"
+                className="group relative overflow-hidden rounded-xl3 border p-9 shadow-card transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
                 style={{
                   background: isMission
-                    ? "linear-gradient(135deg, #0D111D 0%, #131A2E 50%, #0A0D18 100%)"
-                    : "linear-gradient(135deg, #0A1322 0%, #0F1F35 50%, #070E1A 100%)",
+                    ? "linear-gradient(135deg, #FFF5F6 0%, #FEE2E6 45%, #FECDD3 100%)"
+                    : "linear-gradient(135deg, #ECFEFF 0%, #E0F2FE 45%, #EEF2FF 100%)",
+                  borderColor: isMission ? "#FECDD3" : "#BAE6FD",
                 }}
               >
                 {/* Glowing Ambient Mesh Backlight */}
                 <div
-                  className={`pointer-events-none absolute -right-12 -top-12 h-64 w-64 rounded-full blur-3xl opacity-40 transition-opacity duration-500 group-hover:opacity-70 ${
+                  className={`pointer-events-none absolute -right-12 -top-12 h-64 w-64 rounded-full blur-3xl opacity-50 transition-opacity duration-500 group-hover:opacity-80 ${
                     isMission
-                      ? "bg-gradient-to-br from-rose-500 via-fuchsia-500 to-purple-600"
-                      : "bg-gradient-to-br from-teal-400 via-cyan-500 to-indigo-600"
+                      ? "bg-gradient-to-br from-rose-300 via-pink-400 to-red-400"
+                      : "bg-gradient-to-br from-teal-300 via-cyan-400 to-indigo-400"
                   }`}
                 />
 
                 {/* 3D Fluid Ribbon Graphic Overlay */}
-                <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-85 transition-transform duration-700 ease-out group-hover:scale-105">
+                <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-90 transition-transform duration-700 ease-out group-hover:scale-105">
                   {isMission ? (
                     /* Mission 3D Ribbon Wave (Rose -> Fuchsia -> Purple) */
                     <svg
@@ -66,7 +67,7 @@ export function Philosophy() {
                           <stop offset="100%" stopColor="#4C1D95" stopOpacity="0.2" />
                         </linearGradient>
                         <linearGradient id="mission-highlight" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.4" />
+                          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
                           <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
                         </linearGradient>
                       </defs>
@@ -112,7 +113,7 @@ export function Philosophy() {
                           <stop offset="100%" stopColor="#1E1B4B" stopOpacity="0.3" />
                         </linearGradient>
                         <linearGradient id="vision-highlight" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.45" />
+                          <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6" />
                           <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
                         </linearGradient>
                       </defs>
@@ -144,17 +145,23 @@ export function Philosophy() {
                 {/* Content Overlay */}
                 <div className="relative z-10 flex flex-col justify-between min-h-[220px]">
                   <div>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-mono font-semibold uppercase tracking-[0.18em] text-white shadow-soft backdrop-blur-md">
+                    <span
+                      className={`inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-mono font-semibold uppercase tracking-[0.18em] shadow-soft backdrop-blur-md ${
+                        isMission
+                          ? "border-rose-300/80 bg-white/80 text-rose-900"
+                          : "border-sky-300/80 bg-white/80 text-sky-900"
+                      }`}
+                    >
                       <span
                         className={`h-1.5 w-1.5 rounded-full ${
-                          isMission ? "bg-rose-400" : "bg-cyan-400"
+                          isMission ? "bg-rose-500" : "bg-cyan-500"
                         } animate-pulse-soft`}
                       />
                       {point.title}
                     </span>
                   </div>
 
-                  <p className="mt-8 font-display text-xl font-medium leading-relaxed text-white max-w-sm text-balance">
+                  <p className="mt-8 font-display text-xl font-medium leading-relaxed text-ink max-w-sm text-balance">
                     {point.description}
                   </p>
                 </div>

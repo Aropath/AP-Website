@@ -16,7 +16,14 @@ export function CoreValues() {
         />
         <div className="mt-16 grid gap-6 sm:grid-cols-2">
           {CORE_VALUES.map((value, i) => (
-            <FeatureCard key={value.title} {...value} index={i} />
+            <FeatureCard
+              key={value.title}
+              {...value}
+              index={i}
+              className="border-[#8A3A40]/60 hover:border-[#8A3A40]"
+              iconBgClassName="bg-[#8A3A40] group-hover:bg-[#722F35]"
+              iconClassName="text-white"
+            />
           ))}
         </div>
       </Container>

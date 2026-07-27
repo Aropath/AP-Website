@@ -35,7 +35,7 @@ function usePrefersReducedMotion() {
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
-    const listener = (e) => setReduced(e.matches);
+    const listener = (e: MediaQueryListEvent) => setReduced(e.matches);
     mq.addEventListener("change", listener);
     return () => mq.removeEventListener("change", listener);
   }, []);
@@ -43,8 +43,8 @@ function usePrefersReducedMotion() {
 }
 
 /* ---------- Scroll reveal hook ---------- */
-function useReveal(reduced) {
-  const ref = useRef(null);
+function useReveal(reduced: boolean): [React.RefObject<HTMLDivElement>, boolean] {
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(reduced);
   useEffect(() => {
     if (reduced) return;
@@ -65,7 +65,14 @@ function useReveal(reduced) {
   return [ref, visible];
 }
 
-function Reveal({ children, reduced, className = "", style = {} }) {
+interface RevealProps {
+  children: React.ReactNode;
+  reduced: boolean;
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+function Reveal({ children, reduced, className = "", style = {} }: RevealProps) {
   const [ref, visible] = useReveal(reduced);
   return (
     <div
@@ -99,12 +106,6 @@ function Navbar() {
           <span className="brand-name">Aropath</span>
         </a>
 
-        <div className="navbar-actions">
-          <a href="#contact-form" className="btn btn-ghost">
-            Sign in
-          </a>
-        </div>
-
         <button
           className="nav-toggle"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -116,16 +117,20 @@ function Navbar() {
       </div>
 
       <div className={`nav-mobile ${open ? "nav-mobile-open" : ""}`}>
-        <a href="#contact-form" className="btn btn-ghost nav-mobile-cta" onClick={() => setOpen(false)}>
-          Sign in
-        </a>
       </div>
     </header>
   );
 }
 
 /* ============================== HERO ============================== */
-function HeroStatChip({ label, value, delay, reduced }) {
+interface HeroStatChipProps {
+  label: string;
+  value: string;
+  delay: number;
+  reduced: boolean;
+}
+
+function HeroStatChip({ label, value, delay, reduced }: HeroStatChipProps) {
   return (
     <div
       className="stat-chip"
@@ -137,7 +142,7 @@ function HeroStatChip({ label, value, delay, reduced }) {
   );
 }
 
-function HeroVisual({ reduced }) {
+function HeroVisual({ reduced }: { reduced: boolean }) {
   return (
     <div className="hero-visual" aria-hidden="true">
       <svg viewBox="0 0 420 380" className="hero-path-svg">
@@ -186,7 +191,7 @@ function HeroVisual({ reduced }) {
   );
 }
 
-function HeroSection({ reduced }) {
+function HeroSection({ reduced }: { reduced: boolean }) {
   return (
     <section className="hero" id="top">
       <div className="hero-bg" aria-hidden="true">
@@ -237,7 +242,16 @@ const INTEREST_OPTIONS = [
 
 const COMPANY_SIZES = ["1–10", "11–50", "51–200", "201–1000", "1000+"];
 
-function Field({ label, htmlFor, required, hint, children }) {
+interface FieldProps {
+  label: string;
+  htmlFor?: string;
+  required?: boolean;
+  hint?: string;
+  children: React.ReactNode;
+  className?: string;
+}
+
+function Field({ label, htmlFor, required, hint, children }: FieldProps) {
   return (
     <div className="field">
       <label htmlFor={htmlFor} className="field-label">
@@ -249,7 +263,7 @@ function Field({ label, htmlFor, required, hint, children }) {
   );
 }
 
-function ContactForm({ reduced }) {
+function ContactForm({ reduced }: { reduced: boolean }) {
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -262,15 +276,15 @@ function ContactForm({ reduced }) {
     interest: "",
     message: "",
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const update = (key) => (e) =>
+  const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setValues((v) => ({ ...v, [key]: e.target.value }));
 
   const validate = () => {
-    const errs = {};
+    const errs: Record<string, string> = {};
     if (!values.firstName.trim()) errs.firstName = "First name is required.";
     if (!values.lastName.trim()) errs.lastName = "Last name is required.";
     if (!values.workEmail.trim()) {
@@ -286,7 +300,7 @@ function ContactForm({ reduced }) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
@@ -499,7 +513,7 @@ const BENEFITS = [
   },
 ];
 
-function ContactBenefits({ reduced }) {
+function ContactBenefits({ reduced }: { reduced: boolean }) {
   return (
     <div className="benefits-col">
       <Reveal reduced={reduced}>
@@ -549,7 +563,7 @@ const TRUST_ITEMS = [
   { icon: Users, label: "Customer Focused" },
 ];
 
-function TrustSection({ reduced }) {
+function TrustSection({ reduced }: { reduced: boolean }) {
   return (
     <section className="trust">
       <Reveal reduced={reduced} className="trust-inner">

@@ -3,7 +3,6 @@ import { TrustedCompanies } from "@/components/home/TrustedCompanies";
 import { About } from "@/components/home/About";
 import { Philosophy } from "@/components/home/Philosophy";
 import { CoreValues } from "@/components/home/CoreValues";
-import { ProductsOverview } from "@/components/home/ProductsOverview";
 import { HowItWorks } from "@/components/home/HowItWorks";
 // import { Statistics } from "@/components/home/Statistics";
 // import { Testimonials } from "@/components/home/Testimonials";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <About />
       <Philosophy />
       <CoreValues />
-      <ProductsOverview />
       <HowItWorks />
       {/* <Statistics /> */}
       {/* <Testimonials /> */}

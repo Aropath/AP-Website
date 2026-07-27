@@ -9,6 +9,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
  */
 export function CursorGlow({ boundsId }: { boundsId: string }) {
   const [enabled, setEnabled] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { damping: 30, stiffness: 120, mass: 0.5 });
@@ -27,12 +28,37 @@ export function CursorGlow({ boundsId }: { boundsId: string }) {
 
     const handleMove = (e: MouseEvent) => {
       const rect = bounds.getBoundingClientRect();
-      x.set(e.clientX - rect.left);
-      y.set(e.clientY - rect.top);
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      // Only enable glow when mouse is strictly within hero bounds
+      if (
+        e.clientX >= rect.left &&
+        e.clientX <= rect.right &&
+        e.clientY >= rect.top &&
+        e.clientY <= rect.bottom
+      ) {
+        x.set(mouseX);
+        y.set(mouseY);
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+
+    const handleLeave = () => {
+      setIsHovering(false);
     };
 
     bounds.addEventListener("mousemove", handleMove);
-    return () => bounds.removeEventListener("mousemove", handleMove);
+    bounds.addEventListener("mouseleave", handleLeave);
+    window.addEventListener("scroll", handleLeave, { passive: true });
+
+    return () => {
+      bounds.removeEventListener("mousemove", handleMove);
+      bounds.removeEventListener("mouseleave", handleLeave);
+      window.removeEventListener("scroll", handleLeave);
+    };
   }, [enabled, boundsId, x, y]);
 
   if (!enabled) return null;
@@ -40,7 +66,10 @@ export function CursorGlow({ boundsId }: { boundsId: string }) {
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none absolute h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-saffron/40 blur-[90px]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isHovering ? 0.85 : 0 }}
+      transition={{ duration: 0.3 }}
+      className="pointer-events-none absolute h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-saffron/70 via-pink-300/60 to-saffron/70 blur-[75px]"
       style={{ left: springX, top: springY }}
     />
   );

@@ -48,16 +48,16 @@ export function UseCases() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="mt-16 grid gap-6 sm:grid-cols-2"
+          className="mt-16 grid gap-6 md:grid-cols-3"
         >
           {USE_CASES.map((useCase, i) => (
             <motion.div
               key={useCase.title}
               variants={fadeUp}
               custom={i}
-              className="rounded-xl2 border border-line bg-card p-7 shadow-soft"
+              className="rounded-xl2 border border-[#78A899]/60 bg-card p-7 shadow-soft transition-colors duration-300 hover:border-[#78A899]"
             >
-              <span className="inline-flex rounded-full bg-saffron/60 px-3 py-1 text-xs font-medium text-ink">
+              <span className="inline-flex rounded-full bg-[#8FBFB0]/30 border border-[#78A899]/50 px-3 py-1 text-xs font-semibold text-[#18362D]">
                 {useCase.tag}
               </span>
               <h3 className="mt-4 font-display text-lg font-medium text-ink">

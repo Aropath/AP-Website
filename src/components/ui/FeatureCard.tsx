@@ -11,6 +11,8 @@ interface FeatureCardProps {
   description: string;
   index?: number;
   className?: string;
+  iconBgClassName?: string;
+  iconClassName?: string;
 }
 
 export function FeatureCard({
@@ -19,6 +21,8 @@ export function FeatureCard({
   description,
   index = 0,
   className,
+  iconBgClassName,
+  iconClassName,
 }: FeatureCardProps) {
   return (
     <motion.div
@@ -34,8 +38,13 @@ export function FeatureCard({
         className
       )}
     >
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-saffron/50 transition-colors duration-300 group-hover:bg-saffron">
-        <Icon className="h-5 w-5 text-ink" strokeWidth={1.75} />
+      <div
+        className={cn(
+          "mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300",
+          iconBgClassName || "bg-saffron/50 group-hover:bg-saffron"
+        )}
+      >
+        <Icon className={cn("h-5 w-5", iconClassName || "text-ink")} strokeWidth={1.75} />
       </div>
       <h3 className="font-display text-lg font-medium text-ink">{title}</h3>
       <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-muted">

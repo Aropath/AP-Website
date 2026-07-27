@@ -35,7 +35,9 @@ export function Hero() {
       className="relative overflow-hidden pb-24 pt-40 sm:pb-32 sm:pt-48"
     >
       <div className="absolute inset-0 bg-path-grid bg-[size:22px_22px] opacity-[0.35]" aria-hidden="true" />
+      <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[600px] w-[600px] opacity-90 sm:-left-12" />
       <GradientBlob className="left-1/2 top-[-10%] h-[560px] w-[900px] -translate-x-1/2 opacity-80" />
+      <GradientBlob variant="blush" className="-right-24 top-[-8%] h-[600px] w-[600px] opacity-90 sm:-right-12" />
       <CursorGlow boundsId="hero-bounds" />
 
       <Container className="relative">
@@ -69,10 +71,12 @@ export function Hero() {
                 Get Started Free
               </Button>
             </MagneticButton>
-            <Button variant="glass" size="lg">
-              <span>Watch a 2-min demo</span>
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+            <MagneticButton>
+              <Button variant="glass" size="lg" className="hover:-translate-y-1">
+                <span>Watch a 2-min demo</span>
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </MagneticButton>
           </motion.div>
 
           <motion.div
@@ -80,24 +84,31 @@ export function Hero() {
             animate="visible"
             variants={fadeUp}
             custom={4}
-            className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-ink-muted/85 font-medium"
+            className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold"
           >
-            <div className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true">
+            <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
+              <svg className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current" strokeWidth="2" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+                <line x1="3" y1="3" x2="21" y2="21" strokeWidth="2.2" />
+              </svg>
+              <span>No credit card required</span>
+            </div>
+
+            <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
+              <svg className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
               </svg>
               <span>SOC 2 Type II</span>
             </div>
-            <span className="h-1 w-1 rounded-full bg-line" />
-            <div className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 fill-none stroke-current" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true">
+
+            <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
+              <svg className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current" strokeWidth="2.2" viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0110 0v4" />
               </svg>
               <span>GDPR Compliant</span>
             </div>
-            <span className="h-1 w-1 rounded-full bg-line" />
-            <span>No credit card required</span>
           </motion.div>
         </div>
 

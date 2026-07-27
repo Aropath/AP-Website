@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -13,12 +13,36 @@ import { cn } from "@/lib/utils";
 export function Navbar() {
   const { direction, scrolled } = useScrollDirection();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [idleHidden, setIdleHidden] = useState(false);
   const pathname = usePathname();
+  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (idleTimerRef.current) {
+      clearTimeout(idleTimerRef.current);
+    }
+
+    setIdleHidden(false);
+
+    // Auto-hide navbar after 30 seconds of reading / no scrolling
+    idleTimerRef.current = setTimeout(() => {
+      setIdleHidden(true);
+    }, 30000);
+
+    return () => {
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+    };
+  }, [direction, scrolled]);
+
+  // Navbar appears when scrolling downwards, disappears when scrolling upwards or after 30s idle
+  const isVisible = mobileOpen || (scrolled ? (direction === "down" && !idleHidden) : !idleHidden);
 
   return (
     <>
       <motion.header
-        animate={{ y: direction === "down" && scrolled && !mobileOpen ? -96 : 0 }}
+        animate={{ y: isVisible ? 0 : -96 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         className="fixed inset-x-0 top-0 z-50"
       >
@@ -62,9 +86,17 @@ export function Navbar() {
           </nav>
 
           <div className="hidden items-center gap-2 md:flex">
-            <Link href="/contact"><Button variant="ghost" size="sm">
+            <Link
+              href="/contact"
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                pathname === "/contact"
+                  ? "text-ink font-semibold"
+                  : "text-ink-muted hover:text-ink"
+              )}
+            >
               Contact
-            </Button></Link>
+            </Link>
             <Button variant="navy" size="sm" withArrow>
               Get Started
             </Button>
@@ -108,7 +140,18 @@ export function Navbar() {
               ))}
             </nav>
             <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
-              <Link href="/contact" onClick={() => setMobileOpen(false)}><Button variant="outline" size="sm">Contact</Button></Link>
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className={cn(
+                  "rounded-lg px-3 py-2 text-base font-medium transition-colors",
+                  pathname === "/contact"
+                    ? "text-ink font-semibold"
+                    : "text-ink-muted hover:text-ink"
+                )}
+              >
+                Contact
+              </Link>
               <Button variant="navy" size="sm" withArrow>Get Started</Button>
             </div>
           </motion.div>

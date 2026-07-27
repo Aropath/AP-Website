@@ -20,7 +20,7 @@ export function About() {
             About AroPath
           </span>
           <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
-            We started with one belief: "Real results are always within reach, not just hoped for."
+            We started with one belief: &quot;Real results are always within reach, not just hoped for.&quot;
           </h2>
         </motion.div>
 
@@ -35,7 +35,7 @@ export function About() {
             Most tools leave businesses with more to figure out, not less — scattered software, disconnected data, no clear next step. We built AroPath around one idea: every tool we build should point directly to action.
           </p>
           <p>
-            We build the software, shape the data, and create the products behind it — each one built to show you exactly what to do next. It's the difference between having tools and actually growing.
+            We build the software, shape the data, and create the products behind it — each one built to show you exactly what to do next. It&apos;s the difference between having tools and actually growing.
           </p>
         </motion.div>
       </Container>
