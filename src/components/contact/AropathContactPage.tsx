@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   Route,
@@ -19,6 +18,9 @@ import {
   TrendingUp,
   Gauge,
   MessageSquareText,
+  Mail,
+  Phone,
+  MapPin,
 } from "lucide-react";
 
 /* ============================================================
@@ -35,7 +37,7 @@ function usePrefersReducedMotion() {
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduced(mq.matches);
-    const listener = (e: MediaQueryListEvent) => setReduced(e.matches);
+    const listener = (e) => setReduced(e.matches);
     mq.addEventListener("change", listener);
     return () => mq.removeEventListener("change", listener);
   }, []);
@@ -43,8 +45,8 @@ function usePrefersReducedMotion() {
 }
 
 /* ---------- Scroll reveal hook ---------- */
-function useReveal(reduced: boolean): [React.RefObject<HTMLDivElement>, boolean] {
-  const ref = useRef<HTMLDivElement>(null);
+function useReveal(reduced) {
+  const ref = useRef(null);
   const [visible, setVisible] = useState(reduced);
   useEffect(() => {
     if (reduced) return;
@@ -65,14 +67,7 @@ function useReveal(reduced: boolean): [React.RefObject<HTMLDivElement>, boolean]
   return [ref, visible];
 }
 
-interface RevealProps {
-  children: React.ReactNode;
-  reduced: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-function Reveal({ children, reduced, className = "", style = {} }: RevealProps) {
+function Reveal({ children, reduced, className = "", style = {} }) {
   const [ref, visible] = useReveal(reduced);
   return (
     <div
@@ -116,21 +111,12 @@ function Navbar() {
         </button>
       </div>
 
-      <div className={`nav-mobile ${open ? "nav-mobile-open" : ""}`}>
-      </div>
     </header>
   );
 }
 
 /* ============================== HERO ============================== */
-interface HeroStatChipProps {
-  label: string;
-  value: string;
-  delay: number;
-  reduced: boolean;
-}
-
-function HeroStatChip({ label, value, delay, reduced }: HeroStatChipProps) {
+function HeroStatChip({ label, value, delay, reduced }) {
   return (
     <div
       className="stat-chip"
@@ -142,7 +128,7 @@ function HeroStatChip({ label, value, delay, reduced }: HeroStatChipProps) {
   );
 }
 
-function HeroVisual({ reduced }: { reduced: boolean }) {
+function HeroVisual({ reduced }) {
   return (
     <div className="hero-visual" aria-hidden="true">
       <svg viewBox="0 0 420 380" className="hero-path-svg">
@@ -191,7 +177,7 @@ function HeroVisual({ reduced }: { reduced: boolean }) {
   );
 }
 
-function HeroSection({ reduced }: { reduced: boolean }) {
+function HeroSection({ reduced }) {
   return (
     <section className="hero" id="top">
       <div className="hero-bg" aria-hidden="true">
@@ -203,7 +189,6 @@ function HeroSection({ reduced }: { reduced: boolean }) {
         </svg>
         <div className="blob blob-saffron blob-a" />
         <div className="blob blob-crimson blob-b" />
-        <div className="blob blob-teal blob-c" />
       </div>
 
       <div className="hero-inner">
@@ -235,23 +220,14 @@ function HeroSection({ reduced }: { reduced: boolean }) {
 const INTEREST_OPTIONS = [
   "Pricing & plans",
   "Product demo",
-  "Technical questions",
+  "Technical QnA",
   "Partnerships",
-  "Enterprise plan",
+  "Enterprise Soln",
 ];
 
 const COMPANY_SIZES = ["1–10", "11–50", "51–200", "201–1000", "1000+"];
 
-interface FieldProps {
-  label: string;
-  htmlFor?: string;
-  required?: boolean;
-  hint?: string;
-  children: React.ReactNode;
-  className?: string;
-}
-
-function Field({ label, htmlFor, required, hint, children }: FieldProps) {
+function Field({ label, htmlFor, required, hint, children }) {
   return (
     <div className="field">
       <label htmlFor={htmlFor} className="field-label">
@@ -263,7 +239,7 @@ function Field({ label, htmlFor, required, hint, children }: FieldProps) {
   );
 }
 
-function ContactForm({ reduced }: { reduced: boolean }) {
+function ContactForm({ reduced }) {
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -276,15 +252,15 @@ function ContactForm({ reduced }: { reduced: boolean }) {
     interest: "",
     message: "",
   });
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const update = (key: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+  const update = (key) => (e) =>
     setValues((v) => ({ ...v, [key]: e.target.value }));
 
   const validate = () => {
-    const errs: Record<string, string> = {};
+    const errs = {};
     if (!values.firstName.trim()) errs.firstName = "First name is required.";
     if (!values.lastName.trim()) errs.lastName = "Last name is required.";
     if (!values.workEmail.trim()) {
@@ -300,7 +276,7 @@ function ContactForm({ reduced }: { reduced: boolean }) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);
@@ -429,20 +405,23 @@ function ContactForm({ reduced }: { reduced: boolean }) {
           />
         </Field>
 
-        <Field label="Company size" required className="span-2">
-          <div className="segmented" role="radiogroup" aria-label="Company size">
-            {COMPANY_SIZES.map((size) => (
-              <button
-                type="button"
-                key={size}
-                role="radio"
-                aria-checked={values.companySize === size}
-                className={`segment ${values.companySize === size ? "segment-active" : ""}`}
-                onClick={() => setValues((v) => ({ ...v, companySize: size }))}
-              >
-                {size}
-              </button>
-            ))}
+        <Field label="Company size" htmlFor="companySize" required className="span-2">
+          <div className="select-wrap">
+            <select
+              id="companySize"
+              className={`input select-input ${errors.companySize ? "input-error" : ""}`}
+              value={values.companySize}
+              onChange={update("companySize")}
+              aria-invalid={Boolean(errors.companySize)}
+            >
+              <option value="">Select your company size</option>
+              {COMPANY_SIZES.map((size) => (
+                <option key={size} value={size}>
+                  {size}
+                </option>
+              ))}
+            </select>
+            <ChevronDown className="select-chevron" size={17} aria-hidden="true" />
           </div>
           {errors.companySize && <span className="error-msg">{errors.companySize}</span>}
         </Field>
@@ -513,7 +492,7 @@ const BENEFITS = [
   },
 ];
 
-function ContactBenefits({ reduced }: { reduced: boolean }) {
+function ContactBenefits({ reduced }) {
   return (
     <div className="benefits-col">
       <Reveal reduced={reduced}>
@@ -557,13 +536,12 @@ function ContactBenefits({ reduced }: { reduced: boolean }) {
 
 /* ============================== TRUST SECTION ============================== */
 const TRUST_ITEMS = [
-  { icon: TrendingUp, label: "Actionable Insights" },
-  { icon: ShieldCheck, label: "Reliable Analytics" },
-  { icon: Building2, label: "Enterprise Ready" },
-  { icon: Users, label: "Customer Focused" },
+  { icon: Mail, label: "Email" },
+  { icon: Phone, label: "Phone" },
+  { icon: MapPin, label: "Address" },
 ];
 
-function TrustSection({ reduced }: { reduced: boolean }) {
+function TrustSection({ reduced }) {
   return (
     <section className="trust">
       <Reveal reduced={reduced} className="trust-inner">
@@ -594,12 +572,6 @@ function Footer() {
           </span>
           <span className="brand-name">Aropath</span>
         </div>
-        <nav className="footer-links" aria-label="Footer">
-          <a href="#">Product</a>
-          <a href="#">Pricing</a>
-          <a href="#">Docs</a>
-          <a href="#">Privacy</a>
-        </nav>
         <span className="footer-copy">&copy; {new Date().getFullYear()} Aropath Dashboard. All rights reserved.</span>
       </div>
     </footer>
@@ -616,20 +588,19 @@ export default function ContactUsPage() {
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
 
         .ap-page {
-          --saffron: #F5B942;
-          --saffron-deep: #E39F1F;
-          --saffron-wash: #FBE7B6;
-          --bg-base: #FFF6E2;
-          --cream: #FFFCF5;
-          --crimson: #D1911F;
-          --crimson-soft: #FBE9C0;
-          --navy: #21293D;
-          --navy-70: rgba(33,41,61,0.72);
-          --navy-45: rgba(33,41,61,0.45);
-          --teal: #8FBFB0;
-          --border: rgba(33,41,61,0.12);
-          --shadow-soft: 0 20px 45px rgba(33,41,61,0.10);
-          --shadow-tight: 0 8px 20px rgba(33,41,61,0.08);
+          --saffron: #F9EDB7;
+          --saffron-deep: #F2A93B;
+          --saffron-wash: #FCF8E8;
+          --bg-base: #FFFDF7;
+          --cream: #FFFFFF;
+          --crimson: #F2A93B;
+          --crimson-soft: #F9EDB7;
+          --navy: #1E2B37;
+          --navy-70: rgba(17,24,39,0.72);
+          --navy-45: rgba(107,114,128,0.72);
+          --border: #ECE7D3;
+          --shadow-soft: 0 20px 45px rgba(30,43,55,0.10);
+          --shadow-tight: 0 8px 20px rgba(30,43,55,0.08);
           font-family: 'Inter', -apple-system, sans-serif;
           color: var(--navy);
           background: var(--bg-base);
@@ -669,8 +640,8 @@ export default function ContactUsPage() {
           white-space: nowrap;
         }
         .btn:active { transform: scale(0.97); }
-        .btn-primary { background: var(--crimson); color: #FFF8F0; box-shadow: var(--shadow-tight); }
-        .btn-primary:hover { background: #A8730A; box-shadow: 0 12px 26px rgba(209,145,31,0.35); transform: translateY(-1px); }
+        .btn-primary { background: var(--saffron-deep); color: var(--navy); box-shadow: var(--shadow-tight); }
+        .btn-primary:hover { background: #F5E5A4; box-shadow: 0 12px 26px rgba(242,169,59,0.35); transform: translateY(-1px); }
         .btn-secondary { background: transparent; color: var(--navy); border-color: var(--navy); }
         .btn-secondary:hover { background: var(--navy); color: var(--bg-base); }
         .btn-ghost { background: transparent; color: var(--navy-70); }
@@ -683,20 +654,20 @@ export default function ContactUsPage() {
           display: inline-flex; align-items: center; gap: 7px;
           font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500;
           letter-spacing: 0.04em; text-transform: uppercase;
-          color: var(--crimson); background: rgba(209,145,31,0.1);
+          color: var(--crimson); background: rgba(242,169,59,0.1);
           padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
         }
-        .eyebrow-dark { color: var(--navy); background: rgba(33,41,61,0.06); }
+        .eyebrow-dark { color: var(--navy); background: rgba(30,43,55,0.06); }
 
         /* ---------- navbar ---------- */
         .navbar {
           position: sticky; top: 0; z-index: 50;
-          background: rgba(255,246,226,0.7);
+          background: rgba(255,253,247,0.7);
           backdrop-filter: blur(10px);
           border-bottom: 1px solid transparent;
           transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .navbar-scrolled { background: rgba(255,252,245,0.92); border-color: var(--border); box-shadow: 0 4px 20px rgba(33,41,61,0.06); }
+        .navbar-scrolled { background: rgba(255,255,255,0.92); border-color: var(--border); box-shadow: 0 4px 20px rgba(30,43,55,0.06); }
         .navbar-inner {
           max-width: 1180px; margin: 0 auto; padding: 14px 28px;
           display: flex; align-items: center; justify-content: space-between; gap: 24px;
@@ -740,7 +711,6 @@ export default function ContactUsPage() {
         .blob { position: absolute; border-radius: 50%; filter: blur(50px); opacity: 0.55; }
         .blob-saffron { width: 340px; height: 340px; background: var(--saffron); top: -120px; left: -80px; }
         .blob-crimson { width: 300px; height: 300px; background: var(--crimson-soft); bottom: -100px; right: 6%; }
-        .blob-teal { width: 220px; height: 220px; background: var(--teal); opacity: 0.35; top: 40%; right: 30%; }
         @media (prefers-reduced-motion: no-preference) {
           .blob-a { animation: drift-a 16s ease-in-out infinite; }
           .blob-b { animation: drift-b 19s ease-in-out infinite; }
@@ -832,7 +802,7 @@ export default function ContactUsPage() {
           color: var(--crimson); box-shadow: var(--shadow-tight);
           transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .path-item:hover .path-node { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(209,145,31,0.25); }
+        .path-item:hover .path-node { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(242,169,59,0.25); }
         .path-item-copy h4 { font-size: 16.5px; font-weight: 600; margin-bottom: 5px; }
         .path-item-copy p { font-size: 14px; color: var(--navy-70); max-width: 360px; }
         .path-demo-cta { margin-top: 12px; margin-left: 62px; }
@@ -861,19 +831,24 @@ export default function ContactUsPage() {
 
         .input {
           font-family: inherit; font-size: 14.5px; color: var(--navy);
-          background: #fff; border: 1.5px solid var(--border); border-radius: 12px;
+          background: var(--cream); border: 1.5px solid var(--border); border-radius: 12px;
           padding: 11px 14px; outline: none; transition: border-color 0.18s ease, box-shadow 0.18s ease;
         }
         .input::placeholder { color: var(--navy-45); }
-        .input:hover { border-color: rgba(33,41,61,0.24); }
-        .input:focus { border-color: var(--crimson); box-shadow: 0 0 0 4px rgba(209,145,31,0.14); }
-        .input-error { border-color: var(--crimson); background: rgba(209,145,31,0.05); }
+        .input:hover { border-color: rgba(30,43,55,0.24); }
+        .input:focus { border-color: var(--crimson); box-shadow: 0 0 0 4px rgba(242,169,59,0.14); }
+        .input-error { border-color: var(--crimson); background: rgba(242,169,59,0.05); }
         .textarea { resize: vertical; min-height: 90px; }
         .error-msg { font-size: 12px; color: var(--crimson); font-weight: 500; }
 
+        .select-wrap { position: relative; }
+        .select-input { width: 100%; appearance: none; padding-right: 42px; cursor: pointer; }
+        .select-input:invalid { color: var(--navy-45); }
+        .select-chevron { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--navy-70); pointer-events: none; }
+
         .segmented { display: flex; flex-wrap: wrap; gap: 8px; }
         .segment {
-          border: 1.5px solid var(--border); background: #fff; border-radius: 10px;
+          border: 1.5px solid var(--border); background: var(--cream); border-radius: 10px;
           padding: 9px 14px; font-size: 13.5px; font-weight: 500; color: var(--navy-70);
           transition: all 0.16s ease;
         }
@@ -882,12 +857,12 @@ export default function ContactUsPage() {
 
         .chip-group { display: flex; flex-wrap: wrap; gap: 8px; }
         .chip {
-          border: 1.5px solid var(--border); background: #fff; border-radius: 999px;
+          border: 1.5px solid var(--border); background: var(--cream); border-radius: 999px;
           padding: 8px 15px; font-size: 13px; font-weight: 500; color: var(--navy-70);
           transition: all 0.16s ease;
         }
         .chip:hover { border-color: var(--crimson); color: var(--navy); transform: translateY(-1px); }
-        .chip-active { background: var(--crimson); border-color: var(--crimson); color: #FFF8F0; }
+        .chip-active { background: var(--saffron-deep); border-color: var(--saffron-deep); color: var(--navy); }
 
         .form-fineprint { font-size: 12px; color: var(--navy-45); text-align: center; margin-top: 12px; }
 
