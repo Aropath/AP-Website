@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { fadeUp } from "@/animations/variants";
@@ -86,16 +87,28 @@ export function PricingCard({ plan, index, billingInterval }: PricingCardProps) 
         </span>
       )}
 
-      <Button
-        variant={plan.highlighted ? "accent" : "outline"}
-        className={cn(
-          "mt-7 w-full",
-          !plan.highlighted && "border-line"
-        )}
-        withArrow
-      >
-        {plan.cta}
-      </Button>
+      {plan.id === "enterprise" ? (
+        <Link href="/contact" className="mt-7 w-full">
+          <Button
+            variant="glass"
+            className="w-full hover:-translate-y-0.5"
+            withArrow
+          >
+            {plan.cta}
+          </Button>
+        </Link>
+      ) : (
+        <Button
+          variant={plan.highlighted ? "accent" : "outline"}
+          className={cn(
+            "mt-7 w-full",
+            !plan.highlighted && "border-line"
+          )}
+          withArrow
+        >
+          {plan.cta}
+        </Button>
+      )}
 
       <ul className="mt-8 flex flex-col gap-3.5">
         {plan.features.map((feature) => (

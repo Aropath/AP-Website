@@ -1,6 +1,6 @@
 "use client";
 
-import { ShieldCheck } from "lucide-react";
+import { Lock } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { FeatureCard } from "@/components/ui/FeatureCard";
@@ -17,7 +17,14 @@ export function EnterpriseFeatures() {
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {ENTERPRISE_FEATURES.map((f, i) => (
-            <FeatureCard key={f.title} {...f} index={i} />
+            <FeatureCard
+              key={f.title}
+              {...f}
+              index={i}
+              className="border-[#E07A5F]/60 hover:border-[#E07A5F]"
+              iconBgClassName="bg-[#E07A5F] group-hover:bg-[#C9664D]"
+              iconClassName="text-white"
+            />
           ))}
         </div>
       </Container>
@@ -31,9 +38,7 @@ export function Security() {
       <Container>
         <div className="grid gap-14 lg:grid-cols-[1fr,1.3fr] lg:gap-16">
           <div>
-            <span className="flex h-12 w-12 items-center justify-center rounded-xl2 bg-saffron/60">
-              <ShieldCheck className="h-6 w-6 text-ink" strokeWidth={1.75} />
-            </span>
+            <Lock className="h-[72px] w-[72px] text-gray-400" strokeWidth={1.5} />
             <h2 className="mt-6 font-display text-display-lg font-medium text-ink">
               Built to perform. Designed to last.
             </h2>

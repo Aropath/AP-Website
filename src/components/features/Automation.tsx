@@ -38,12 +38,12 @@ export function Automation() {
             <motion.li
               key={item}
               variants={fadeUp}
-              className="flex items-start gap-3 rounded-xl2 border border-line bg-card p-5 shadow-soft"
+              className="flex items-start gap-3 rounded-xl2 border border-[#C08A9B]/60 bg-card p-5 shadow-soft transition-colors duration-300 hover:border-[#C08A9B]"
             >
-              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-saffron/60">
-                <Check className="h-3.5 w-3.5 text-ink" />
+              <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#C08A9B] border border-[#C08A9B] shadow-sm">
+                <Check className="h-3.5 w-3.5 text-white" strokeWidth={2.5} />
               </span>
-              <span className="text-[0.95rem] leading-relaxed text-ink">{item}</span>
+              <span className="text-[0.95rem] font-medium leading-relaxed text-ink">{item}</span>
             </motion.li>
           ))}
         </motion.ul>

@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Building2 } from "lucide-react";
 import { fadeUp } from "@/animations/variants";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function EnterprisePlan() {
   return (
@@ -27,9 +29,13 @@ export function EnterprisePlan() {
             Our enterprise plan is built around your compliance, security, and
             scale requirements — with a dedicated team to help you get there.
           </p>
-          <Button variant="accent" size="lg" withArrow>
-            Talk to Sales
-          </Button>
+          <MagneticButton>
+            <Link href="/contact">
+              <Button variant="glass" size="lg" className="hover:-translate-y-1 text-white border-white/20 bg-white/10 hover:bg-white/20" withArrow>
+                Talk to Sales
+              </Button>
+            </Link>
+          </MagneticButton>
         </motion.div>
       </Container>
     </section>

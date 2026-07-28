@@ -29,6 +29,12 @@ export const FEATURE_OVERVIEW: FeatureItem[] = [
     description:
       "A prioritized action plan, continuously refined to reflect the latest conditions, without requiring manual updates.",
   },
+  {
+    icon: FileText,
+    title: "Automated Reports",
+    description:
+      "Weekly and monthly PDF summaries generated automatically, keeping your stakeholders informed without formatting effort.",
+  },
 ];
 
 export const AI_CAPABILITIES: FeatureItem[] = [

@@ -47,7 +47,7 @@ export function HowItWorks() {
               custom={i}
               className="relative flex flex-col items-start"
             >
-              <div className="font-display text-5xl font-semibold text-saffron-logo/25 select-none leading-none mb-4">
+              <div className="font-display text-5xl font-semibold text-[#3FBFAD] select-none leading-none mb-4">
                 {step.number}
               </div>
               <h3 className="font-display text-lg font-medium text-ink mb-2">

@@ -16,7 +16,14 @@ export function Analytics() {
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {ANALYTICS_FEATURES.map((f, i) => (
-            <FeatureCard key={f.title} {...f} index={i} />
+            <FeatureCard
+              key={f.title}
+              {...f}
+              index={i}
+              className="border-[#7380FA]/60 hover:border-[#7380FA]"
+              iconBgClassName="bg-[#7380FA] group-hover:bg-[#5E6CE8]"
+              iconClassName="text-white"
+            />
           ))}
         </div>
       </Container>

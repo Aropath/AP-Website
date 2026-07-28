@@ -19,7 +19,7 @@ const buttonVariants = cva(
         outline:
           "border border-line bg-transparent text-ink hover:bg-card hover:border-ink/20",
         glass:
-          "border border-line/80 bg-bg/70 backdrop-blur-xl text-ink shadow-soft hover:bg-bg/90 hover:border-ink/30",
+          "border border-black bg-slate-500/10 backdrop-blur-xl text-ink shadow-soft hover:bg-slate-500/20 hover:border-black hover:shadow-md active:scale-[0.98]",
         ghost: "text-ink hover:bg-saffron/40",
       },
       size: {
