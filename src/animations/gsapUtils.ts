@@ -17,7 +17,7 @@ export function splitTextReveal(
   el.innerHTML = words
     .map(
       (word) =>
-        `<span class="inline-block overflow-hidden align-bottom"><span class="inline-block will-change-transform">${word}&nbsp;</span></span>`
+        `<span class="inline-block overflow-hidden pb-4 -mt-4"><span class="inline-block will-change-transform">${word}</span></span>`
     )
     .join(" ");
 

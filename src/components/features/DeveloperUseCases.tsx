@@ -15,7 +15,7 @@ export function DeveloperAPIs() {
       <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
         <div>
           <span className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
-            Developer APIs
+            Developer Platforms
           </span>
           <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
             Everything in the UI, available in code

@@ -30,8 +30,7 @@ export function Footer() {
               <span>AroPath</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
-              AroPath turns website analytics into a ranked, AI-written growth
-              plan — so teams act on data instead of just reading it.
+              AroPath builds practical AI-powered products that helps people, teams, and organizations solve real problems with greater clarity and confidence.
             </p>
             <div className="mt-6 flex gap-3">
               {[Twitter, Github, Linkedin].map((Icon, i) => (

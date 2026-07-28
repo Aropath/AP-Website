@@ -35,7 +35,7 @@ export default function FeaturesPage() {
       <FAQSection items={FEATURES_FAQ} />
       <CTASection
         title="See these features on your own website"
-        description="Connect your website in 6 minutes and get your first growth checklist immediately."
+        description="Connect your website in 5 minutes and get your first growth checklist immediately."
       />
     </>
   );

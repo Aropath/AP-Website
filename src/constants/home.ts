@@ -125,11 +125,11 @@ export const PHILOSOPHY_POINTS = [
   {
     title: "Mission",
     description:
-      "To turn website analytics into a ranked, AI-written growth plan — so teams act on data instead of just reading it.",
+      "To turn direction into software, insight, and product — so businesses act with clarity instead of guessing.",
   },
   {
     title: "Vision",
     description:
-      "A web where teams spend their time growing revenue and executing plans, rather than interpreting dashboard charts.",
+      "A world where growth is something businesses build, not just something they hope for.",
   },
 ];

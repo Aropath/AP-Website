@@ -11,9 +11,9 @@ export function EnterpriseFeatures() {
     <section className="py-24">
       <Container>
         <SectionHeader
-          eyebrow="Enterprise"
-          title="Ready for how large teams actually work"
-          description="Provisioning, permissions, and deployment options that satisfy IT and security without slowing your builders down."
+          eyebrow="Built to support"
+          title="Everything you need to get started and keep growing."
+          description="From implementation to ongoing improvements, we build products that are simple to adopt, easy to use, and supported every step of the way."
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {ENTERPRISE_FEATURES.map((f, i) => (
@@ -35,11 +35,10 @@ export function Security() {
               <ShieldCheck className="h-6 w-6 text-ink" strokeWidth={1.75} />
             </span>
             <h2 className="mt-6 font-display text-display-lg font-medium text-ink">
-              Security that holds up to an audit, not just a demo
+              Built to perform. Designed to last.
             </h2>
             <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-muted">
-              Every workflow run is logged, every permission is scoped, and
-              every claim we make is backed by an independent audit.
+              Every AroPath product is built with reliability, performance, and usability at its core—so you can focus on your work, not your tools.
             </p>
           </div>
           <dl className="grid gap-6 sm:grid-cols-2">

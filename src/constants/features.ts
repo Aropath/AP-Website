@@ -34,18 +34,18 @@ export const FEATURE_OVERVIEW: FeatureItem[] = [
 export const AI_CAPABILITIES: FeatureItem[] = [
   {
     icon: Sparkles,
-    title: "Revenue Opportunities",
-    description: "Identify where value is being lost across the business, and see the impact of fixing it, before you commit resources.",
+    title: "Intelligent Websites",
+    description: "Modern websites designed for speed, usability, and measurable business impact.",
   },
   {
     icon: TrendingUp,
-    title: "Bottleneck Detection",
-    description: "Catch issues, delays, or breakdowns early, before they have a chance to affect results downstream.",
+    title: "Analytics & Insights",
+    description: "Understand customer behaviour, identify opportunities, and make confident decisions with AI-powered analytics.",
   },
   {
     icon: Target,
-    title: "Prioritized Recommendations",
-    description: "AroPath ranks issues by potential impact, giving your team a clear, actionable path forward.",
+    title: "AI Products",
+    description: "Practical AI designed to simplify work, automate repetitive tasks, and support better decisions.",
   },
 ];
 
@@ -60,25 +60,25 @@ export const AUTOMATION_FEATURES = [
 export const ENTERPRISE_FEATURES: FeatureItem[] = [
   {
     icon: Shield,
-    title: "SSO & Audit Logs",
-    description: "Secure your team's access with SAML Single Sign-On and maintain clear logs of all plan updates.",
+    title: "Continuous Improvements",
+    description: "We regularly improve our products with new features, performance updates, and refinements based on real customer feedback.",
   },
   {
     icon: FileText,
-    title: "Custom Report Branding",
-    description: "White-label reports with your company's branding, logos, and custom color palettes.",
+    title: "Automated Reports",
+    description: "Receive clear reports that help you stay informed without manually compiling or formatting data.",
   },
   {
     icon: Zap,
-    title: "Advanced Technical Support",
-    description: "Priority support for complex setups, integrations, and technical requirements.",
+    title: "Responsive Technical Support",
+    description: "Need help getting started or have a question? Our team is here to help you make the most of every AroPath product.",
   },
 ];
 
 export const SECURITY_POINTS = [
-  { title: "SAML SSO Support", description: "Enforce company-wide identity policies for all project spaces." },
-  { title: "Encrypted Data", description: "All data is encrypted in transit and at rest with TLS 1.3 and AES-256." },
-  { title: "Immutable Audit Logs", description: "Every setting change, report export, and checklist edit is logged permanently." },
+  { title: "Fast Performance", description: "Responsive products designed for speed and a smooth experience." },
+  { title: "Continuous Updates", description: "Regular improvements that enhance features, stability, and performance." },
+  { title: "Thoughtful Support", description: "Practical guidance whenever you need help getting the most from our products." },
 ];
 
 export const ANALYTICS_FEATURES: FeatureItem[] = [
@@ -105,22 +105,22 @@ export const INTEGRATIONS = [
 ];
 
 export const DEVELOPER_FEATURES = [
-  "Node.js SDK npm package for server-side analytics tracking",
-  "Single lightweight HTML script tag snippet for frontend analytics",
+  "Node.js SDK npm package for analytics tracking",
+  "Single lightweight HTML script tag snippet for analytics",
   "Rotatable API Keys scoped to separate sandbox and production sites",
   "Raw visitor event exports via standard REST API endpoints",
 ];
 
 export const USE_CASES: UseCase[] = [
-  { tag: "SaaS", title: "Faster product iteration", description: "Ship features with confidence, backed by data on what's actually working." },
-  { tag: "E-Commerce", title: "Custom storefronts", description: "From storefront builds to checkout optimization, one team handles both." },
-  { tag: "Agencies", title: "White-labelled delivery, end to end", description: "Build client sites and report on their performance, without switching tools." },
+  { tag: "SaaS", title: "Faster platform iteration", description: "Ship features with confidence, backed by data on what's actually working." },
+  { tag: "E-Commerce", title: "Online Growth", description: "Create fast digital experiences backed by analytics and performance optimization." },
+  { tag: "Enterprises", title: "Business solutions", description: "Custom software, intelligent workflows, and digital platforms built around your business." },
 ];
 
 export const FEATURES_FAQ: FAQItem[] = [
   {
     question: "How long does it take to get AroPath running?",
-    answer: "Most teams are collecting data within 6 minutes of installing the SDK snippet or dropping the script tag onto their site."
+    answer: "Most teams are collecting data within 5 minutes of installing the SDK snippet or dropping the script tag onto their site."
   },
   {
     question: "Does AroPath work with my current stack?",
@@ -135,7 +135,7 @@ export const FEATURES_FAQ: FAQItem[] = [
     answer: "Sessions are scored against conversion and revenue outcomes, then ranked so the highest-impact fix appears first."
   },
   {
-    question: "Can I customize what goes into my reports?",
-    answer: "Yes, weekly and monthly reports can be filtered by specific metrics or date ranges, and exported as PDF at any time."
+    question: "Can I generate reports fro different time periods?",
+    answer: "Yes, weekly, monthly, quarterly, semi-annually and annually reports can be generated and exported as PDF at any time."
   },
 ];

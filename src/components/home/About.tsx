@@ -20,7 +20,7 @@ export function About() {
             About AroPath
           </span>
           <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
-            We started with one belief: "Real results are always within reach, not just hoped for."
+            We started with one belief: "Build products that create measurable impact."
           </h2>
         </motion.div>
 
@@ -32,10 +32,10 @@ export function About() {
           className="flex flex-col gap-6 text-lg leading-relaxed text-ink-muted"
         >
           <p>
-            Most tools leave businesses with more to figure out, not less — scattered software, disconnected data, no clear next step. We built AroPath around one idea: every tool we build should point directly to action.
+            Great software speaks for itself. We build things that are thoughtful, capable, and easy to use — from AI tools to websites, analytics, and business platforms, each one shaped by the same standard of craft.
           </p>
           <p>
-            We build the software, shape the data, and create the products behind it — each one built to show you exactly what to do next. It's the difference between having tools and actually growing.
+            We treat every product the same way — with care, from start to finish. Software, insight, and product, each one built with the same attention, and aimed at the same result: something that drives progress.
           </p>
         </motion.div>
       </Container>

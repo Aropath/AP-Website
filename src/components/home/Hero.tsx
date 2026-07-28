@@ -44,7 +44,7 @@ export function Hero() {
             ref={headingRef}
             className="max-w-4xl font-display text-display-2xl font-medium text-ink text-balance"
           >
-            Every ambition needs a path. The right one delivers revenue.
+            Every vision  needs a path. The right one delivers revenue.
           </h1>
 
           <motion.p
@@ -54,7 +54,7 @@ export function Hero() {
             custom={2}
             className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted"
           >
-            Ambition is everywhere. Direction is rare. AroPath builds the software and systems behind numbers that keep climbing.
+            Decisions are confusing. Direction can help. AroPath builds the software and systems behind numbers that keep climbing.
           </motion.p>
 
           <motion.div

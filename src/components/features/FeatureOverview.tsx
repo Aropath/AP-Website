@@ -30,8 +30,8 @@ export function AICapabilities() {
       <Container>
         <SectionHeader
           eyebrow="AI Capabilities"
-          title="Models tuned for real growth"
-          description="Not a generic dashboard — a set of capabilities built for the decisions your team actually needs to make."
+          title="Intelligent Products for Modern Teams"
+          description="From AI-powered analytics to intelligent websites and business tools, every AroPath product is designed to simplify work and help people move faster with confidence."
         />
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {AI_CAPABILITIES.map((f, i) => (
