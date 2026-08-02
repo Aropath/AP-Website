@@ -35,18 +35,19 @@ export function Hero() {
       className="relative overflow-hidden pb-24 pt-40 sm:pb-32 sm:pt-48"
     >
       <div className="absolute inset-0 bg-path-grid bg-[size:22px_22px] opacity-[0.35]" aria-hidden="true" />
-      <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[600px] w-[600px] opacity-90 sm:-left-12" />
+      <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[500px] w-[500px] opacity-90 sm:-left-12" />
       <GradientBlob className="left-1/2 top-[-10%] h-[560px] w-[900px] -translate-x-1/2 opacity-80" />
-      <GradientBlob variant="blush" className="-right-24 top-[-8%] h-[600px] w-[600px] opacity-90 sm:-right-12" />
+      <GradientBlob variant="blush" className="-right-24 top-[-8%] h-[500px] w-[500px] opacity-90 sm:-right-12" />
       <CursorGlow boundsId="hero-bounds" />
 
       <Container className="relative">
         <div className="flex flex-col items-center text-center">
           <h1
             ref={headingRef}
-            className="max-w-4xl font-display text-display-2xl font-medium text-ink text-balance"
+            className="max-w-5xl font-display text-display-2xl font-medium text-ink text-balance"
           >
-            Every vision  needs a path. The right one delivers revenue.
+             Smarter Revenue. Stronger Growth.
+
           </h1>
 
           <motion.p
@@ -56,7 +57,7 @@ export function Hero() {
             custom={2}
             className="mt-7 max-w-xl text-lg leading-relaxed text-ink-muted"
           >
-            Decisions are confusing. Direction can help. AroPath builds the software and systems behind numbers that keep climbing.
+            Every outcome begins with a clear direction. AroPath builds the software and systems behind numbers that keep climbing.
           </motion.p>
 
           <motion.div

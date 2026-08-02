@@ -14,9 +14,9 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#1E2B37",
+          DEFAULT: "#002d57",
           hover: "#15202B",
-        },
+        },    
         saffron: {
           DEFAULT: "#F9EDB7",
           hover: "#F5E5A4",

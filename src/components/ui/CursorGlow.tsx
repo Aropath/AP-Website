@@ -69,7 +69,20 @@ export function CursorGlow({ boundsId }: { boundsId: string }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: isHovering ? 0.85 : 0 }}
       transition={{ duration: 0.3 }}
-      className="pointer-events-none absolute h-[460px] w-[460px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-saffron/70 via-pink-300/60 to-saffron/70 blur-[75px]"
+      className="
+pointer-events-none
+absolute
+h-[500px]
+w-[500px]
+-translate-x-1/2
+-translate-y-1/2
+rounded-full
+bg-gradient-to-r
+from-yellow-300/70
+via-amber-200/60
+to-yellow-300/70
+blur-[95px]
+"
       style={{ left: springX, top: springY }}
     />
   );
