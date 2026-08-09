@@ -1,10 +1,26 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/layout/PageHero";
-import { FeatureOverview, AICapabilities } from "@/components/features/FeatureOverview";
+
+import {
+  FeatureOverview,
+  AICapabilities,
+} from "@/components/features/FeatureOverview";
+
 import { Automation } from "@/components/features/Automation";
-import { EnterpriseFeatures, Security } from "@/components/features/EnterpriseSecurity";
-import { Analytics, Integrations } from "@/components/features/AnalyticsIntegrations";
-import { DeveloperAPIs, UseCases } from "@/components/features/DeveloperUseCases";
+
+import {
+  EnterpriseFeatures,
+  Security,
+} from "@/components/features/EnterpriseSecurity";
+
+import {
+  Integrations,
+} from "@/components/features/AnalyticsIntegrations";
+
+import {
+  DeveloperAPIs,
+  UseCases,
+} from "@/components/features/DeveloperUseCases";
+
 import { FAQSection } from "@/components/layout/FAQSection";
 import { CTASection } from "@/components/layout/CTASection";
 import { FEATURES_FAQ } from "@/constants/features";
@@ -18,21 +34,25 @@ export const metadata: Metadata = {
 export default function FeaturesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Features"
-        title="Every capabilty your growth engine needs to be trusted "
-        description="Every piece of what we make is built with intention. Software, data, and security, all pointed at the same thing: results that last."
-      />
+      {/* 1. OVERVIEW */}
       <FeatureOverview />
-      <AICapabilities />
+
+      {/* 2. GROWTH PLANS */}
       <Automation />
+
+      {/* 3. AI CAPABILITIES */}
+      <AICapabilities />
+
+      {/* 4. BUILT TO SUPPORT */}
       <EnterpriseFeatures />
+
+      {/* Remaining sections */}
       <Security />
-      <Analytics />
       <Integrations />
       <DeveloperAPIs />
       <UseCases />
       <FAQSection items={FEATURES_FAQ} />
+
       <CTASection
         title="See these features on your own website"
         description="Connect your website in 5 minutes and get your first growth checklist immediately."

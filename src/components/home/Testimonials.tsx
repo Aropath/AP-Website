@@ -9,7 +9,7 @@ import { TESTIMONIALS } from "@/constants/home";
 
 export function Testimonials() {
   return (
-    <section className="py-28 sm:py-32">
+    <section className="py-24">
       <Container>
         <SectionHeader eyebrow="Customers" title="Teams already on the path" />
         <motion.div

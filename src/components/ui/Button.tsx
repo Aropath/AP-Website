@@ -6,21 +6,21 @@ import { forwardRef, type ButtonHTMLAttributes } from "react";
 import { ArrowRight } from "lucide-react";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-body font-medium transition-all duration-300 ease-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none",
+  "inline-flex items-center justify-center gap-2 rounded-full font-body font-medium transition-all duration-300 ease-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40 focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50 disabled:pointer-events-none transform-gpu hover:-translate-y-[2px] hover:scale-[1.02] active:translate-y-[1px] active:scale-[0.98]",
   {
     variants: {
       variant: {
         primary:
-          "bg-ink text-bg hover:bg-ink/90 shadow-soft",
+          "btn-premium-base btn-premium-dark",
         navy:
-          "bg-navy text-white hover:bg-navy-hover shadow-soft",
+          "btn-premium-base btn-premium-dark",
         accent:
-          "bg-saffron text-ink hover:bg-saffron-hover shadow-glow",
+          "btn-premium-base btn-premium-light",
         outline:
-          "border border-line bg-transparent text-ink hover:bg-card hover:border-ink/20",
+          "btn-premium-base btn-premium-secondary",
         glass:
-          "border border-black bg-slate-500/10 backdrop-blur-xl text-ink shadow-soft hover:bg-slate-500/20 hover:border-black hover:shadow-md active:scale-[0.98]",
-        ghost: "text-ink hover:bg-saffron/40",
+          "btn-premium-base btn-premium-secondary",
+        ghost: "text-ink hover:bg-saffron/40 hover:-translate-y-[1px] hover:scale-100",
       },
       size: {
         sm: "h-9 px-4 text-sm",

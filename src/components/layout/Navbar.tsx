@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -11,39 +11,43 @@ import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const { direction, scrolled } = useScrollDirection();
+  const { scrolled } = useScrollDirection();
+
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [idleHidden, setIdleHidden] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+
   const pathname = usePathname();
-  const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    if (idleTimerRef.current) {
-      clearTimeout(idleTimerRef.current);
+    const keepVisible =
+      pathname === "/" || pathname === "/vision";
+
+    // Homepage and vision page: navbar never disappears
+    if (keepVisible) {
+      setIsVisible(true);
+      return;
     }
 
-    setIdleHidden(false);
+    // Other pages: show initially, hide after 30 seconds
+    setIsVisible(true);
 
-    // Auto-hide navbar after 30 seconds of reading / no scrolling
-    idleTimerRef.current = setTimeout(() => {
-      setIdleHidden(true);
+    const timeout = window.setTimeout(() => {
+      setIsVisible(false);
     }, 30000);
 
     return () => {
-      if (idleTimerRef.current) {
-        clearTimeout(idleTimerRef.current);
-      }
+      window.clearTimeout(timeout);
     };
-  }, [direction, scrolled]);
-
-  // Navbar appears when scrolling downwards, disappears when scrolling upwards or after 30s idle
-  const isVisible = mobileOpen || (scrolled ? (direction === "down" && !idleHidden) : !idleHidden);
+  }, [pathname]);
 
   return (
     <>
       <motion.header
         animate={{ y: isVisible ? 0 : -96 }}
-        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        transition={{
+          duration: 0.35,
+          ease: [0.16, 1, 0.3, 1],
+        }}
         className="fixed inset-x-0 top-0 z-50"
       >
         <div
@@ -54,7 +58,11 @@ export function Navbar() {
               : "border border-transparent bg-transparent"
           )}
         >
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink" aria-label="AroPath home">
+          <Link
+            href="/"
+            className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink"
+            aria-label="AroPath home"
+          >
             <svg className="h-6 w-6" viewBox="0 0 26 26" fill="none">
               <path
                 d="M2 20 C 7 20, 7 8, 12 8 C 17 8, 15 16, 20 16 C 22.5 16, 23 13, 24 11"
@@ -63,8 +71,14 @@ export function Navbar() {
                 strokeLinecap="round"
                 fill="none"
               />
-              <circle cx="24" cy="11" r="2" className="fill-teal-logo" />
+              <circle
+                cx="24"
+                cy="11"
+                r="2"
+                className="fill-teal-logo"
+              />
             </svg>
+
             <span>AroPath</span>
           </Link>
 
@@ -97,6 +111,7 @@ export function Navbar() {
             >
               Contact
             </Link>
+
             <Button variant="navy" size="sm" withArrow>
               Get Started
             </Button>
@@ -108,7 +123,11 @@ export function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </motion.header>
@@ -139,6 +158,7 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
+
             <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
               <Link
                 href="/contact"
@@ -152,7 +172,10 @@ export function Navbar() {
               >
                 Contact
               </Link>
-              <Button variant="navy" size="sm" withArrow>Get Started</Button>
+
+              <Button variant="navy" size="sm" withArrow>
+                Get Started
+              </Button>
             </div>
           </motion.div>
         )}

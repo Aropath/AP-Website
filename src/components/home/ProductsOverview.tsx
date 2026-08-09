@@ -7,7 +7,7 @@ import { PRODUCTS_OVERVIEW } from "@/constants/home";
 
 export function ProductsOverview() {
   return (
-    <section id="products" className="py-28 sm:py-32">
+    <section id="products" className="py-24">
       <Container>
         <SectionHeader
           eyebrow="Platform"

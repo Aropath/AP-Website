@@ -10,7 +10,7 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export function EnterprisePlan() {
   return (
-    <section className="py-8">
+    <section className="py-24">
       <Container>
         <motion.div
           initial="hidden"

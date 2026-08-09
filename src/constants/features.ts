@@ -60,7 +60,7 @@ export const AUTOMATION_FEATURES = [
   "Custom Software & Product Builds",
   "Estimated Impact & Revenue Forecasts",
   "Progress Tracking & Completion Audits",
-  "Automated Weekly & Monthly Summaries",
+  "Automated Weekly & Monthly Reports",
 ];
 
 export const ENTERPRISE_FEATURES: FeatureItem[] = [
@@ -71,8 +71,8 @@ export const ENTERPRISE_FEATURES: FeatureItem[] = [
   },
   {
     icon: FileText,
-    title: "Automated Reports",
-    description: "Receive clear reports that help you stay informed without manually compiling or formatting data.",
+    title: "Reports Delivered to Your Inbox",
+    description: " Receive clear weekly and monthly reports directly by email, so you always have the latest updates without having to check manually",
   },
   {
     icon: Zap,

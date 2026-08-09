@@ -26,7 +26,7 @@ export default function DocsPage() {
         </div>
       </PageHero>
 
-      <section className="pb-28">
+      <section className="py-24">
         <Container className="flex gap-16">
           <DocsSidebar />
           <div className="min-w-0 flex-1">

@@ -8,7 +8,7 @@ import { PHILOSOPHY_POINTS } from "@/constants/home";
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="bg-bg-secondary/60 py-28 sm:py-32">
+    <section id="philosophy" className="bg-bg-secondary/60 py-32">
       <Container>
         <SectionHeader
           eyebrow="Philosophy"
@@ -19,7 +19,7 @@ export function Philosophy() {
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
           variants={staggerContainer}
-          className="mx-auto mt-16 grid max-w-5xl gap-8 md:grid-cols-2"
+          className="mx-auto mt-20 grid max-w-5xl gap-8 md:grid-cols-2"
         >
           {PHILOSOPHY_POINTS.map((point, i) => {
             const isMission = point.title.toLowerCase() === "mission";

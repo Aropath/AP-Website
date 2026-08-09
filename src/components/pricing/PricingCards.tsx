@@ -9,7 +9,7 @@ export function PricingCards() {
   const [billingInterval, setBillingInterval] = useState<"monthly" | "annually">("monthly");
 
   return (
-    <section className="pb-8 pt-4">
+    <section className="py-24">
       <Container>
         {/* Billing Toggle */}
         <div className="flex flex-col items-center mb-16">

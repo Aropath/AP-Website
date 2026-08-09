@@ -22,7 +22,7 @@ export default function StatusPage() {
         title="System Status"
         description="Check real-time performance and historical uptime metrics for all AroPath systems."
       />
-      <section className="pb-28 pt-8">
+      <section className="py-24">
         <Container className="max-w-2xl">
           <div className="rounded-xl3 border border-line bg-card p-8 shadow-soft">
             <div className="flex items-center gap-4 border-b border-line pb-6">

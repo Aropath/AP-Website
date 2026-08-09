@@ -15,7 +15,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         description="Last updated: July 17, 2026. Learn how we collect, process, and protect your website visitor data."
       />
-      <section className="pb-28 pt-8">
+      <section className="py-24">
         <Container className="max-w-3xl">
           <div className="prose prose-slate max-w-none text-ink-muted [&>h2]:font-display [&>h2]:text-xl [&>h2]:font-medium [&>h2]:text-ink [&>h2]:mt-12 [&>h2]:mb-4 [&>p]:leading-relaxed [&>p]:mb-6">
             <h2>1. Introduction</h2>

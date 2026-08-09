@@ -20,7 +20,7 @@ export function CTASection({
   return (
     <section
       id="contact"
-      className="relative overflow-hidden py-28 border-t border-line"
+      className="relative min-h-[calc(100vh-88px)] flex items-center overflow-hidden border-t border-line py-20"
     >
       <GradientBlob className="left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 opacity-70" />
 
@@ -48,7 +48,11 @@ export function CTASection({
 
             <MagneticButton>
               <Link href="/contact">
-                <Button variant="glass" size="lg" className="hover:-translate-y-1">
+                <Button
+                  variant="glass"
+                  size="lg"
+                  className="hover:-translate-y-1"
+                >
                   <span>Talk to Sales</span>
                 </Button>
               </Link>
@@ -58,7 +62,7 @@ export function CTASection({
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
             <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
               <svg
-                className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current"
+                className="h-3.5 w-3.5 fill-none stroke-current text-sky-700"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -72,7 +76,7 @@ export function CTASection({
 
             <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
               <svg
-                className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current"
+                className="h-3.5 w-3.5 fill-none stroke-current text-sky-700"
                 strokeWidth="2.2"
                 viewBox="0 0 24 24"
                 aria-hidden="true"
@@ -84,7 +88,7 @@ export function CTASection({
 
             <div className="flex items-center gap-2 rounded-full border border-sky-300/60 bg-sky-100/75 px-4 py-1.5 text-sky-950 shadow-soft backdrop-blur-sm transition-all hover:bg-sky-200/70">
               <svg
-                className="h-3.5 w-3.5 text-sky-700 fill-none stroke-current"
+                className="h-3.5 w-3.5 fill-none stroke-current text-sky-700"
                 strokeWidth="2.2"
                 viewBox="0 0 24 24"
                 aria-hidden="true"

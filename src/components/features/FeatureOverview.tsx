@@ -14,14 +14,16 @@ export function FeatureOverview() {
           title="Precision and intention, carried through everything."
           description="AroPath works across software, insight, and product. Different disciplines, the same level of care."
         />
+
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURE_OVERVIEW.map((f, i) => (
             <FeatureCard
               key={f.title}
               {...f}
               index={i}
+              flipOnClick
               className="border-[#5DB29D]/60 hover:border-[#5DB29D]"
-              iconBgClassName="bg-[#5DB29D] group-hover:bg-[#499C88]"
+              iconBgClassName="bg-[#5DB29D]"
               iconClassName="text-white"
             />
           ))}
@@ -30,6 +32,7 @@ export function FeatureOverview() {
     </section>
   );
 }
+
 
 export function AICapabilities() {
   return (

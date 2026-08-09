@@ -10,7 +10,7 @@ export function Analytics() {
     <section className="py-24">
       <Container>
         <SectionHeader
-          eyebrow="Analytics"
+          eyebrow="Features"
           title="See performance at the workflow, and the decision"
           description="Aggregate dashboards for the big picture. Full traces for the one run that needs a closer look."
         />

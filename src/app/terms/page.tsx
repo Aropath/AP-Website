@@ -15,7 +15,7 @@ export default function TermsPage() {
         title="Terms of Service"
         description="Last updated: July 17, 2026. Please read these terms carefully before using our platform."
       />
-      <section className="pb-28 pt-8">
+      <section className="py-24">
         <Container className="max-w-3xl">
           <div className="prose prose-slate max-w-none text-ink-muted [&>h2]:font-display [&>h2]:text-xl [&>h2]:font-medium [&>h2]:text-ink [&>h2]:mt-12 [&>h2]:mb-4 [&>p]:leading-relaxed [&>p]:mb-6">
             <h2>1. Agreement to Terms</h2>

@@ -32,15 +32,17 @@ export function SectionHeader({
       )}
     >
       {eyebrow && (
-        <span className="mb-4 inline-flex items-center rounded-full border border-line bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+        <span className="mb-5 inline-flex items-center rounded-full border border-line bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
           {eyebrow}
         </span>
       )}
-      <h2 className="font-display text-display-lg font-medium text-ink">
+
+      <h2 className="font-display text-display-lg font-medium leading-tight text-ink">
         {title}
       </h2>
+
       {description && (
-        <p className="mt-4 text-balance text-lg leading-relaxed text-ink-muted">
+        <p className="mt-6 text-balance text-lg leading-relaxed text-ink-muted">
           {description}
         </p>
       )}

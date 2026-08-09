@@ -30,9 +30,8 @@ export function Hero() {
   }, []);
 
   return (
-    <section
-      id="hero-bounds"
-      className="relative overflow-hidden pb-24 pt-40 sm:pb-32 sm:pt-48"
+    <section id="hero-bounds"
+      className="elative mt-16 overflow-hidden pt-14 pb-24"
     >
       <div className="absolute inset-0 bg-path-grid bg-[size:22px_22px] opacity-[0.35]" aria-hidden="true" />
       <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[500px] w-[500px] opacity-90 sm:-left-12" />

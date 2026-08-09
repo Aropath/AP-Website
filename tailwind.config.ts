@@ -55,6 +55,12 @@ const config: Config = {
         card: "0 1px 1px rgba(17,24,39,0.03), 0 20px 40px -24px rgba(17,24,39,0.12)",
         glow: "0 0 0 1px rgba(249,237,183,0.6), 0 8px 30px -8px rgba(245,229,164,0.55)",
       },
+      dropShadow: {
+        luminescent: [
+          "0 0 8px rgba(63, 191, 173, 0.8)",
+          "0 0 16px rgba(63, 191, 173, 0.4)",
+        ],
+      },
       borderRadius: {
         xl2: "1.25rem",
         xl3: "1.75rem",
