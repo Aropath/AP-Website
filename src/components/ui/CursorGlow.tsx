@@ -72,15 +72,15 @@ export function CursorGlow({ boundsId }: { boundsId: string }) {
       className="
 pointer-events-none
 absolute
-h-[500px]
-w-[500px]
+h-[300px]
+w-[300px]
 -translate-x-1/2
 -translate-y-1/2
 rounded-full
 bg-gradient-to-r
-from-yellow-300/70
-via-amber-200/60
-to-yellow-300/70
+from-[lightgoldenrodyellow]/80
+via-[#f7e7a3]/70
+to-[lightgoldenrodyellow]/80
 blur-[95px]
 "
       style={{ left: springX, top: springY }}

@@ -118,7 +118,7 @@ body {
 
 /* --- Dark Buttons (Primary/Navy) --- */
 .btn-premium-dark {
-  background: linear-gradient(180deg, #2A3B4C 0%, #1E2B37 100%);
+  background: linear-gradient(180deg, #2a2e4c 0%, #1e2237 100%);
   color: #ffffff;
   /* Inner highlight (cyan) and layered shadow */
   box-shadow: inset 0 1px 1px rgba(63, 191, 173, 0.25),

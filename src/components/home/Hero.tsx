@@ -10,6 +10,7 @@ import { CursorGlow } from "@/components/ui/CursorGlow";
 import { GradientBlob } from "@/components/ui/GradientBlob";
 import { splitTextReveal } from "@/animations/gsapUtils";
 import { fadeUp } from "@/animations/variants";
+import { TrustedCompanies } from "@/components/home/TrustedCompanies";
 
 const FLOATING_CARDS = [
   { icon: Sparkles, label: "Draft response", detail: "Auto-generated, awaiting review", style: "left-[4%] top-[18%]" },
@@ -30,20 +31,18 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero-bounds"
-      className="elative mt-16 overflow-hidden pt-14 pb-24"
-    >
+    <section id="hero-bounds" className="relative overflow-hidden pb-20 pt-40 sm:pb-28 sm:pt-42">
       <div className="absolute inset-0 bg-path-grid bg-[size:22px_22px] opacity-[0.35]" aria-hidden="true" />
-      <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[500px] w-[500px] opacity-90 sm:-left-12" />
+      <GradientBlob variant="blush" className="-left-24 top-[-8%] h-[300px] w-[300px] opacity-90 sm:-left-12" />
       <GradientBlob className="left-1/2 top-[-10%] h-[560px] w-[900px] -translate-x-1/2 opacity-80" />
-      <GradientBlob variant="blush" className="-right-24 top-[-8%] h-[500px] w-[500px] opacity-90 sm:-right-12" />
+      <GradientBlob variant="blush" className="-right-24 top-[-8%] h-[300px] w-[300px] opacity-90 sm:-right-12" />
       <CursorGlow boundsId="hero-bounds" />
 
       <Container className="relative">
         <div className="flex flex-col items-center text-center">
           <h1
             ref={headingRef}
-            className="max-w-5xl font-display text-display-2xl font-medium text-ink text-balance"
+            className="max-w-5xl font-display text-display-xl font-medium text-ink text-balance"
           >
              Smarter Revenue. Stronger Growth.
 
@@ -111,7 +110,14 @@ export function Hero() {
             </div>
           </motion.div>
         </div>
+      </Container>
 
+      <div className="mt-8 mb-8">
+        <TrustedCompanies />
+      </div>
+
+      {/* Re-open container for the Enterprise badge and mockup so layout constraints remain */}
+      <Container className="relative">
         {/* Enterprise Edition Badge */}
         <motion.div
           initial="hidden"
@@ -235,16 +241,6 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.8 }}
-          className="mt-16 flex flex-col items-center gap-2 text-ink-muted sm:mt-8"
-        >
-          <span className="text-xs uppercase tracking-[0.14em]">Scroll</span>
-          <ChevronDown className="h-4 w-4 animate-pulse-soft" />
         </motion.div>
       </Container>
     </section>

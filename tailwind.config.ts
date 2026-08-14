@@ -14,16 +14,18 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#002d57",
+          // DEFAULT: "#002d57",
+          DEFAULT: "#131761",
           hover: "#15202B",
         },    
         saffron: {
-          DEFAULT: "#F9EDB7",
-          hover: "#F5E5A4",
+          DEFAULT: "#fffdf7",
+          hover: "#fff4c9",
           logo: "#F2A93B",
         },
         teal: {
-          logo: "#3FBFAD",
+          // logo: "#3FBFAD",
+          logo: "#ffffff",
         },
         bg: {
           DEFAULT: "#FFFDF7",
