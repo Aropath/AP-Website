@@ -44,7 +44,9 @@ export function Hero() {
             ref={headingRef}
             className="max-w-5xl font-display text-display-xl font-medium text-ink text-balance"
           >
-             Smarter Revenue. Stronger Growth.
+             <p>Smarter Revenue.</p>
+             <p>Stronger Growth.</p>
+
 
           </h1>
 

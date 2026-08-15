@@ -22,13 +22,15 @@ export function Navbar() {
     const keepVisible =
       pathname === "/" || pathname === "/vision";
 
-    // Homepage and vision page: navbar never disappears
+    // Homepage and vision page:
+    // navbar stays permanently visible
     if (keepVisible) {
       setIsVisible(true);
       return;
     }
 
-    // Other pages: show initially, hide after 30 seconds
+    // Other pages:
+    // show navbar initially
     setIsVisible(true);
 
     const timeout = window.setTimeout(() => {
@@ -40,10 +42,29 @@ export function Navbar() {
     };
   }, [pathname]);
 
+  // When navbar is hidden, clicking anywhere
+  // brings it back.
+  useEffect(() => {
+    const handlePageClick = () => {
+      if (!isVisible) {
+        setIsVisible(true);
+      }
+    };
+
+    document.addEventListener("click", handlePageClick);
+
+    return () => {
+      document.removeEventListener("click", handlePageClick);
+    };
+  }, [isVisible]);
+
   return (
     <>
       <motion.header
-        animate={{ y: isVisible ? 0 : -96 }}
+        animate={{
+          y: isVisible ? 0 : -110,
+          opacity: isVisible ? 1 : 0,
+        }}
         transition={{
           duration: 0.35,
           ease: [0.16, 1, 0.3, 1],
@@ -58,6 +79,7 @@ export function Navbar() {
               : "border border-transparent bg-transparent"
           )}
         >
+          {/* LOGO */}
           <Link
             href="/"
             className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-ink"
@@ -71,6 +93,7 @@ export function Navbar() {
                 strokeLinecap="round"
                 fill="none"
               />
+
               <circle
                 cx="24"
                 cy="11"
@@ -82,7 +105,11 @@ export function Navbar() {
             <span>AroPath</span>
           </Link>
 
-          <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+          {/* DESKTOP NAVIGATION */}
+          <nav
+            className="hidden items-center gap-1 md:flex"
+            aria-label="Primary"
+          >
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
@@ -90,7 +117,7 @@ export function Navbar() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   pathname === item.href
-                    ? "text-ink font-semibold"
+                    ? "font-semibold text-ink"
                     : "text-ink-muted hover:text-ink"
                 )}
               >
@@ -99,13 +126,14 @@ export function Navbar() {
             ))}
           </nav>
 
+          {/* DESKTOP ACTIONS */}
           <div className="hidden items-center gap-2 md:flex">
             <Link
               href="/contact"
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                 pathname === "/contact"
-                  ? "text-ink font-semibold"
+                  ? "font-semibold text-ink"
                   : "text-ink-muted hover:text-ink"
               )}
             >
@@ -117,6 +145,7 @@ export function Navbar() {
             </Button>
           </div>
 
+          {/* MOBILE BUTTON */}
           <button
             className="flex h-9 w-9 items-center justify-center rounded-full md:hidden"
             onClick={() => setMobileOpen((v) => !v)}
@@ -132,6 +161,7 @@ export function Navbar() {
         </div>
       </motion.header>
 
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -141,7 +171,10 @@ export function Navbar() {
             transition={{ duration: 0.25 }}
             className="fixed inset-x-4 top-20 z-40 rounded-xl2 border border-line bg-card p-5 shadow-card md:hidden"
           >
-            <nav className="flex flex-col gap-1" aria-label="Mobile">
+            <nav
+              className="flex flex-col gap-1"
+              aria-label="Mobile"
+            >
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
@@ -150,7 +183,7 @@ export function Navbar() {
                   className={cn(
                     "rounded-lg px-3 py-2.5 text-base font-medium transition-colors",
                     pathname === item.href
-                      ? "text-ink font-semibold"
+                      ? "font-semibold text-ink"
                       : "text-ink-muted hover:text-ink"
                   )}
                 >
@@ -166,7 +199,7 @@ export function Navbar() {
                 className={cn(
                   "rounded-lg px-3 py-2 text-base font-medium transition-colors",
                   pathname === "/contact"
-                    ? "text-ink font-semibold"
+                    ? "font-semibold text-ink"
                     : "text-ink-muted hover:text-ink"
                 )}
               >
