@@ -30,14 +30,15 @@ export function EnterpriseFeatures() {
           description="From implementation to ongoing improvements, we build products that are simple to adopt, easy to use, and supported every step of the way."
         />
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {/* Built to Support Cards */}
+        <div className="mt-16 grid items-stretch gap-6 md:grid-cols-3">
           {ENTERPRISE_FEATURES.map((feature, index) => {
             const Icon = feature.icon;
 
             return (
               <div
                 key={feature.title}
-                className="group relative overflow-hidden rounded-2xl border border-[#E07A5F]/30 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:border-[#E07A5F]/70 hover:shadow-md"
+                className="group relative flex h-full overflow-hidden rounded-2xl border border-[#E07A5F]/30 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:border-[#E07A5F]/70 hover:shadow-md"
               >
                 {/* Decorative background number */}
                 <span
@@ -47,34 +48,36 @@ export function EnterpriseFeatures() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                {/* Top row */}
-                <div className="relative flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E07A5F] shadow-sm transition-transform duration-300 group-hover:scale-105">
-                    <Icon
-                      className="h-5 w-5 text-white"
-                      strokeWidth={1.75}
-                    />
+                <div className="relative flex w-full flex-col">
+                  {/* Top row */}
+                  <div className="relative flex items-center justify-between">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E07A5F] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                      <Icon
+                        className="h-5 w-5 text-white"
+                        strokeWidth={1.75}
+                      />
+                    </div>
+
+                    <span className="text-xs font-medium uppercase tracking-[0.16em] text-[#E07A5F]/70">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
 
-                  <span className="text-xs font-medium uppercase tracking-[0.16em] text-[#E07A5F]/70">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
+                  {/* Content */}
+                  <div className="relative mt-8 flex-1">
+                    <h3 className="font-display text-xl font-medium leading-tight text-ink">
+                      {feature.title}
+                    </h3>
 
-                {/* Content */}
-                <div className="relative mt-8">
-                  <h3 className="font-display text-xl font-medium leading-tight text-ink">
-                    {feature.title}
-                  </h3>
+                    <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-muted">
+                      {feature.description}
+                    </p>
+                  </div>
 
-                  <p className="mt-3 text-[0.95rem] leading-relaxed text-ink-muted">
-                    {feature.description}
-                  </p>
-                </div>
-
-                {/* Bottom accent */}
-                <div className="relative mt-8 h-px w-full overflow-hidden bg-[#E07A5F]/15">
-                  <div className="h-full w-0 bg-[#E07A5F] transition-all duration-500 group-hover:w-full" />
+                  {/* Bottom accent */}
+                  <div className="relative mt-8 h-px w-full overflow-hidden bg-[#E07A5F]/15">
+                    <div className="h-full w-0 bg-[#E07A5F] transition-all duration-500 group-hover:w-full" />
+                  </div>
                 </div>
               </div>
             );
@@ -104,17 +107,28 @@ export function Security() {
             </h2>
 
             <p className="mt-4 max-w-md text-lg leading-relaxed text-ink-muted">
-              Every AroPath product is built with reliability, performance, and usability at its core—so you can focus on your work, not your tools.
+              Every AroPath product is built with reliability, performance,
+              and usability at its core—so you can focus on your work, not
+              your tools.
             </p>
           </div>
 
-          <dl className="grid gap-6 sm:grid-cols-2">
+          <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SECURITY_POINTS.map((point, index) => (
               <div
                 key={point.title}
-                className="group rounded-2xl border border-line bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-[#E07A5F]/50 hover:shadow-md"
+                className="group relative overflow-hidden rounded-2xl border border-line bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-[#E07A5F]/50 hover:shadow-md"
               >
-                <div className="mb-5 flex items-center justify-between">
+                {/* Large faint background number */}
+                <span
+                  className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[120px] font-medium leading-none text-[#E07A5F]/[0.045]"
+                  aria-hidden="true"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                {/* Top row */}
+                <div className="relative mb-5 flex items-center justify-between">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E07A5F]/10 text-sm font-semibold text-[#E07A5F]">
                     {index + 1}
                   </span>
@@ -125,11 +139,12 @@ export function Security() {
                   />
                 </div>
 
-                <dt className="font-display text-base font-medium text-ink">
+                {/* Content */}
+                <dt className="relative font-display text-base font-medium text-ink">
                   {point.title}
                 </dt>
 
-                <dd className="mt-2 text-sm leading-relaxed text-ink-muted">
+                <dd className="relative mt-2 text-sm leading-relaxed text-ink-muted">
                   {point.description}
                 </dd>
               </div>

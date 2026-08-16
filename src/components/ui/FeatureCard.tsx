@@ -29,6 +29,8 @@ export function FeatureCard({
 }: FeatureCardProps) {
   const [flipped, setFlipped] = useState(false);
 
+  const cardNumber = String(index + 1).padStart(2, "0");
+
   return (
     <motion.div
       custom={index}
@@ -84,6 +86,16 @@ export function FeatureCard({
                 backfaceVisibility: "hidden",
               }}
             >
+              {/* Large faint background number */}
+              <div
+                className="pointer-events-none absolute -right-2 -top-7 select-none"
+                aria-hidden="true"
+              >
+                <span className="font-display text-[150px] font-medium leading-none text-[#5DB29D]/[0.045]">
+                  {cardNumber}
+                </span>
+              </div>
+
               {/* Decorative oversized icon */}
               <div
                 className="pointer-events-none absolute -right-8 -top-8 opacity-[0.045]"
@@ -95,23 +107,17 @@ export function FeatureCard({
                 />
               </div>
 
-              {/* TOP ACCENT */}
-              <div
-                className="absolute left-7 top-7 h-1 w-10 rounded-full bg-[#5DB29D]/60"
-                aria-hidden="true"
-              />
-
               {/* ICON */}
               <div
                 className={cn(
-                  "absolute left-7 top-14 flex h-12 w-12 items-center justify-center rounded-xl",
+                  "absolute left-7 top-7 flex h-12 w-12 items-center justify-center rounded-xl",
                   "shadow-sm",
                   iconBgClassName || "bg-[#5DB29D]"
                 )}
               >
                 <Icon
                   className={cn(
-                    "h-5.5 w-5.5",
+                    "h-5 w-5",
                     iconClassName || "text-white"
                   )}
                   strokeWidth={1.75}
@@ -152,6 +158,16 @@ export function FeatureCard({
                 transform: "rotateY(180deg)",
               }}
             >
+              {/* Large faint background number */}
+              <div
+                className="pointer-events-none absolute -right-2 -top-7 select-none"
+                aria-hidden="true"
+              >
+                <span className="font-display text-[150px] font-medium leading-none text-[#5DB29D]/[0.045]">
+                  {cardNumber}
+                </span>
+              </div>
+
               {/* Background decoration */}
               <div
                 className="pointer-events-none absolute -bottom-10 -right-10 opacity-[0.045]"
