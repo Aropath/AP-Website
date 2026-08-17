@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Check, Compass, ShieldCheck, Route, Gauge, MessageSquareText, Building2, Milestone, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, Check, ShieldCheck, Gauge, MessageSquareText, Building2, Milestone, Mail, Phone, MapPin, Sparkles } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -30,8 +30,8 @@ function Hero() {
       <CursorGlow boundsId="contact-hero" />
 
       <Container className="relative text-center" id="contact-hero">
-        <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-1 text-xs font-mono text-amber-600">
-          <Compass className="h-4 w-4" /> Contact Sales
+        <span className="inline-flex items-center rounded-full border border-line bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+          Contact Sales
         </span>
 
         <h1 className="mt-6 max-w-3xl mx-auto text-4xl sm:text-5xl font-display font-semibold">
@@ -65,32 +65,38 @@ function Hero() {
 
 function Benefits() {
   return (
-    <div>
-      <div className="mb-6">
-        <span className="inline-flex items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-mono text-slate-700">
-          <Route className="h-4 w-4" /> Why reach out
+    <div className="flex flex-col justify-between h-full lg:pr-6">
+      <div className="space-y-3">
+        <span className="inline-flex items-center rounded-full border border-line bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
+          Why reach out
         </span>
-        <h2 className="mt-4 text-2xl font-semibold">Every conversation follows a path.</h2>
-        <p className="mt-2 text-base text-ink-muted">Here’s roughly how it goes once you send that message.</p>
+        <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+          Every conversation follows a path.
+        </h2>
+        <p className="text-base leading-relaxed text-ink-muted">
+          Here’s roughly how it goes once you send that message.
+        </p>
       </div>
 
-      <ol className="space-y-6">
+      <ol className="space-y-5 my-6">
         {BENEFITS.map((b) => (
           <li key={b.title} className="flex items-start gap-4">
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white border shadow-sm">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white border border-line shadow-soft">
               <b.icon className="h-5 w-5 text-amber-500" />
             </div>
-            <div>
-              <h4 className="font-medium">{b.title}</h4>
-              <p className="text-sm text-ink-muted">{b.desc}</p>
+            <div className="pt-0.5">
+              <h4 className="font-medium text-ink">{b.title}</h4>
+              <p className="mt-1 text-sm leading-relaxed text-ink-muted">{b.desc}</p>
             </div>
           </li>
         ))}
       </ol>
 
-      <a href="#contact-form" className="inline-block mt-6">
-        <Button variant="outline" size="md">Book a demo</Button>
-      </a>
+      <div>
+        <a href="#contact-form" className="inline-block">
+          <Button variant="outline" size="md">Book a demo</Button>
+        </a>
+      </div>
     </div>
   );
 }
@@ -109,7 +115,7 @@ function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-white p-8 shadow-soft text-center">
+      <div className="rounded-2xl bg-white p-8 shadow-soft text-center h-full flex flex-col items-center justify-center">
         <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-500 text-white">
           <Check className="h-5 w-5" />
         </div>
@@ -123,32 +129,32 @@ function ContactForm() {
   }
 
   return (
-    <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
+    <form id="contact-form" onSubmit={handleSubmit} className="flex flex-col justify-between h-full space-y-4">
       <div>
-        <label className="text-sm font-medium">Full name</label>
-        <input required value={values.name} onChange={update("name")} className="mt-2 w-full rounded-lg border px-4 py-3" placeholder="Aria Sharma" />
+        <label className="text-sm font-medium text-ink">Full name</label>
+        <input required value={values.name} onChange={update("name")} className="mt-1.5 w-full rounded-lg border border-line bg-canvas px-4 py-2.5 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500" placeholder="Aria Sharma" />
       </div>
 
       <div>
-        <label className="text-sm font-medium">Work email</label>
-        <input required type="email" value={values.email} onChange={update("email")} className="mt-2 w-full rounded-lg border px-4 py-3" placeholder="aria@company.com" />
+        <label className="text-sm font-medium text-ink">Work email</label>
+        <input required type="email" value={values.email} onChange={update("email")} className="mt-1.5 w-full rounded-lg border border-line bg-canvas px-4 py-2.5 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500" placeholder="aria@company.com" />
       </div>
 
       <div>
-        <label className="text-sm font-medium">Company</label>
-        <input required value={values.company} onChange={update("company")} className="mt-2 w-full rounded-lg border px-4 py-3" placeholder="Yourcompany Inc." />
+        <label className="text-sm font-medium text-ink">Company</label>
+        <input required value={values.company} onChange={update("company")} className="mt-1.5 w-full rounded-lg border border-line bg-canvas px-4 py-2.5 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500" placeholder="Yourcompany Inc." />
       </div>
 
-      <div>
-        <label className="text-sm font-medium">Message</label>
-        <textarea required value={values.message} onChange={update("message")} rows={5} className="mt-2 w-full rounded-lg border px-4 py-3" placeholder="How can we help?" />
+      <div className="flex-1 flex flex-col">
+        <label className="text-sm font-medium text-ink">Message</label>
+        <textarea required value={values.message} onChange={update("message")} rows={3} className="mt-1.5 w-full flex-1 min-h-[80px] rounded-lg border border-line bg-canvas px-4 py-2.5 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500" placeholder="How can we help?" />
       </div>
 
       <div className="pt-2">
         <Button type="submit" variant="primary" size="lg" withArrow>
           Contact Sales
         </Button>
-        <p className="mt-3 text-sm text-ink-muted">By submitting, you agree to be contacted by Aropath about our products and services.</p>
+        <p className="mt-2.5 text-xs text-ink-muted">By submitting, you agree to be contacted by Aropath about our products and services.</p>
       </div>
     </form>
   );
@@ -159,29 +165,27 @@ export default function ContactUsPage() {
     <>
       <Hero />
 
-      <Container className="grid gap-10 lg:grid-cols-2 py-12">
-        <Benefits />
-        <div>
-          <div className="bg-white rounded-2xl p-8 shadow-soft">
+      <Container className="py-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-stretch">
+          <Benefits />
+          <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-soft border border-line flex flex-col">
             <ContactForm />
           </div>
+        </div>
 
-          <section className="mt-8">
-            <div className="rounded-2xl bg-slate-50 p-8 text-center">
-              <p className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-700">
-                <Sparkles className="h-4 w-4 text-amber-500" /> Built to help teams turn data into better decisions.
-              </p>
+        <div className="mt-12 rounded-2xl bg-slate-50 border border-line p-6 text-center">
+          <p className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-slate-700">
+            <Sparkles className="h-4 w-4 text-amber-500" /> Built to help teams turn data into better decisions.
+          </p>
 
-              <div className="mt-6 flex items-center justify-center gap-6">
-                {CONTACT_METHODS.map((m) => (
-                  <div key={m.label} className="flex items-center gap-2 text-sm text-ink-muted">
-                    <m.icon className="h-5 w-5 text-amber-500" />
-                    <span>{m.label}</span>
-                  </div>
-                ))}
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+            {CONTACT_METHODS.map((m) => (
+              <div key={m.label} className="flex items-center gap-2 text-sm text-ink-muted">
+                <m.icon className="h-5 w-5 text-amber-500" />
+                <span>{m.label}</span>
               </div>
-            </div>
-          </section>
+            ))}
+          </div>
         </div>
       </Container>
     </>
