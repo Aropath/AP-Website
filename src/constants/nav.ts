@@ -12,7 +12,7 @@ export const FOOTER_LINKS = {
     { label: "Features", href: "/features" },
     { label: "Pricing", href: "/pricing" },
     { label: "Docs", href: "/docs" },
-    { label: "API Reference", href: "/docs#api-reference" },
+    { label: "API Reference", href: "/docs/api-reference" },
   ],
   company: [
     { label: "About", href: "/#about" },
@@ -20,9 +20,9 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/#contact" },
   ],
   resources: [
-    { label: "Help Center", href: "/docs#help" },
-    { label: "Guides", href: "/docs#guides" },
-    { label: "Changelog", href: "/docs#changelog" },
+    { label: "Help Center", href: "/docs/help-support" },
+    { label: "Guides", href: "/docs/guides" },
+    { label: "Changelog", href: "/docs/changelog" },
     { label: "Status", href: "/status" },
   ],
   legal: [
