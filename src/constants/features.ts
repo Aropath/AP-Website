@@ -41,17 +41,20 @@ export const AI_CAPABILITIES: FeatureItem[] = [
   {
     icon: Sparkles,
     title: "Intelligent Websites",
-    description: "Modern websites designed for speed, usability, and measurable business impact.",
+    description:
+      "Modern websites designed for speed, usability, and measurable business impact.",
   },
   {
     icon: TrendingUp,
     title: "Analytics & Insights",
-    description: "Understand customer behaviour, identify opportunities, and make confident decisions with AI-powered analytics.",
+    description:
+      "Understand customer behaviour, identify opportunities, and make confident decisions with AI-powered analytics.",
   },
   {
     icon: Target,
     title: "AI Products",
-    description: "Practical AI designed to simplify work, automate repetitive tasks, and support better decisions.",
+    description:
+      "Practical AI designed to simplify work, automate repetitive tasks, and support better decisions.",
   },
 ];
 
@@ -67,47 +70,69 @@ export const ENTERPRISE_FEATURES: FeatureItem[] = [
   {
     icon: Shield,
     title: "Continuous Improvements",
-    description: "We regularly improve our products with new features, performance updates, and refinements based on real customer feedback.",
+    description:
+      "We regularly improve our products with new features, performance updates, and refinements based on real customer feedback.",
   },
   {
     icon: FileText,
     title: "Reports Delivered to Your Inbox",
-    description: " Receive clear weekly and monthly reports directly by email, so you always have the latest updates without having to check manually",
+    description:
+      " Receive clear weekly and monthly reports directly by email, so you always have the latest updates without having to check manually",
   },
   {
     icon: Zap,
     title: "Responsive Technical Support",
-    description: "Need help getting started or have a question? Our team is here to help you make the most of every AroPath product.",
+    description:
+      "Need help getting started or have a question? Our team is here to help you make the most of every AroPath product.",
   },
 ];
 
 export const SECURITY_POINTS = [
-  { title: "Fast Performance", description: "Responsive products designed for speed and a smooth experience." },
-  { title: "Continuous Updates", description: "Regular improvements that enhance features, stability, and performance." },
-  { title: "Thoughtful Support", description: "Practical guidance whenever you need help getting the most from our products." },
+  {
+    title: "Fast Performance",
+    description:
+      "Responsive products designed for speed and a smooth experience.",
+  },
+  {
+    title: "Continuous Updates",
+    description:
+      "Regular improvements that enhance features, stability, and performance.",
+  },
+  {
+    title: "Thoughtful Support",
+    description:
+      "Practical guidance whenever you need help getting the most from our products.",
+  },
 ];
 
 export const ANALYTICS_FEATURES: FeatureItem[] = [
   {
     icon: BarChart3,
     title: "Visitor Tracking & Sessions",
-    description: "Understand end-to-end user sessions and behavioral flows across multiple visits.",
+    description:
+      "Understand end-to-end user sessions and behavioral flows across multiple visits.",
   },
   {
     icon: Target,
     title: "Conversion Tracking",
-    description: "Track conversions, signups, checkouts, and custom event goals without code changes.",
+    description:
+      "Track conversions, signups, checkouts, and custom event goals without code changes.",
   },
   {
     icon: TrendingUp,
     title: "Engagement Metrics",
-    description: "Measure bounce rates, active focus time, scroll depth, and interaction frequencies.",
+    description:
+      "Measure bounce rates, active focus time, scroll depth, and interaction frequencies.",
   },
 ];
 
 export const INTEGRATIONS = [
-  "Salesforce", "Shopify", "Stripe", "HubSpot", "Google Analytics", "Segment",
-  "WordPress", "Webflow", "Framer", "React SDK", "Next.js", "Vue",
+  "WordPress",
+  "Shopify",
+  "Google Analytics",
+  "Next.js",
+  "React SDK",
+  "Webflow",
 ];
 
 export const DEVELOPER_FEATURES = [
@@ -118,30 +143,50 @@ export const DEVELOPER_FEATURES = [
 ];
 
 export const USE_CASES: UseCase[] = [
-  { tag: "SaaS", title: "Faster platform iteration", description: "Ship features with confidence, backed by data on what's actually working." },
-  { tag: "E-Commerce", title: "Online Growth", description: "Create fast digital experiences backed by analytics and performance optimization." },
-  { tag: "Enterprises", title: "Business solutions", description: "Custom software, intelligent workflows, and digital platforms built around your business." },
+  {
+    tag: "SaaS",
+    title: "Faster platform iteration",
+    description:
+      "Ship features with confidence, backed by data on what's actually working.",
+  },
+  {
+    tag: "E-Commerce",
+    title: "Online Growth",
+    description:
+      "Create fast digital experiences backed by analytics and performance optimization.",
+  },
+  {
+    tag: "Enterprises",
+    title: "Business solutions",
+    description:
+      "Custom software, intelligent workflows, and digital platforms built around your business.",
+  },
 ];
 
 export const FEATURES_FAQ: FAQItem[] = [
   {
     question: "How long does it take to get AroPath running?",
-    answer: "Most teams are collecting data within 5 minutes of installing the SDK snippet or dropping the script tag onto their site."
+    answer:
+      "Most teams are collecting data within 5 minutes of installing the SDK snippet or dropping the script tag onto their site.",
   },
   {
     question: "Does AroPath work with my current stack?",
-    answer: "Yes — AroPath sits alongside your CMS, storefront, or custom app via a single script tag or npm package."
+    answer:
+      "Yes — AroPath sits alongside your CMS, storefront, or custom app via a single script tag or npm package.",
   },
   {
     question: "How is my visitor data protected?",
-    answer: "All data is encrypted in transit and at rest, and API keys can be scoped and rotated at any time to preserve security."
+    answer:
+      "All data is encrypted in transit and at rest, and API keys can be scoped and rotated at any time to preserve security.",
   },
   {
     question: "How does AroPath decide what to recommend?",
-    answer: "Sessions are scored against conversion and revenue outcomes, then ranked so the highest-impact fix appears first."
+    answer:
+      "Sessions are scored against conversion and revenue outcomes, then ranked so the highest-impact fix appears first.",
   },
   {
     question: "Can I generate reports fro different time periods?",
-    answer: "Yes, weekly, monthly, quarterly, semi-annually and annually reports can be generated and exported as PDF at any time."
+    answer:
+      "Yes, weekly, monthly, quarterly, semi-annually and annually reports can be generated and exported as PDF at any time.",
   },
 ];
