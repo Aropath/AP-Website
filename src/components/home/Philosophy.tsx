@@ -8,7 +8,7 @@ import { PHILOSOPHY_POINTS } from "@/constants/home";
 
 export function Philosophy() {
   return (
-    <section id="philosophy" className="bg-bg-secondary/60 py-32">
+    <section id="philosophy" className="py-32">
       <Container>
         <SectionHeader
           eyebrow="Philosophy"

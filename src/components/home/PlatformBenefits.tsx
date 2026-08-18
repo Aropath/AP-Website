@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export function PlatformBenefits() {
   return (
-    <section className="bg-bg-secondary/60 py-24">
+    <section className="py-24">
       <Container>
         <SectionHeader
           eyebrow="Why teams switch"

@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollProgressBar } from "@/components/layout/ScrollProgressBar";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
+import { GradientBlob } from "@/components/ui/GradientBlob";
 
 const SITE_URL = "https://aropath.com";
 
@@ -63,6 +64,9 @@ export default function RootLayout({
           Skip to content
         </a>
         <SmoothScrollProvider>
+          <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+            <GradientBlob variant="blush" className="left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-60" />
+          </div>
           <ScrollProgressBar />
           <Navbar />
           <main id="main-content">{children}</main>

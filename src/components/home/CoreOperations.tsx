@@ -7,7 +7,7 @@ import { CORE_VALUES } from "@/constants/home";
 
 export function CoreOperations() {
   return (
-    <section className="border-b border-line bg-bg-secondary/40 py-32">
+    <section className="border-b border-line /40 py-32">
       <Container>
         <SectionHeader
           eyebrow="Optimizations"

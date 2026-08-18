@@ -9,7 +9,7 @@ export function FeatureComparison() {
         <SectionHeader eyebrow="Compare plans" title="Every plan, side by side" />
         <div className="mt-14 overflow-x-auto rounded-xl2 border border-line shadow-soft">
           <table className="w-full min-w-[640px] text-left text-sm">
-            <thead className="bg-bg-secondary text-xs uppercase tracking-wide text-ink-muted">
+            <thead className="text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-6 py-4 font-medium">Feature</th>
                 <th className="px-6 py-4 font-medium">Starter</th>

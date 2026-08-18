@@ -13,7 +13,7 @@ export function GradientBlob({ className, variant = "saffron" }: GradientBlobPro
       className={cn(
         "pointer-events-none absolute rounded-full blur-3xl",
         variant === "saffron" && "bg-saffron/60",
-        variant === "soft" && "bg-bg-secondary",
+        variant === "soft" && "",
         variant === "blush" && "bg-[#F5E9BA]/85",
         className
       )}

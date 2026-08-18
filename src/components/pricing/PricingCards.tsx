@@ -13,7 +13,7 @@ export function PricingCards() {
       <Container>
         {/* Billing Toggle */}
         <div className="flex flex-col items-center mb-16">
-          <div className="relative inline-flex items-center gap-1 rounded-full border border-line bg-bg-secondary/70 p-1 shadow-soft">
+          <div className="relative inline-flex items-center gap-1 rounded-full border border-line /70 p-1 shadow-soft">
             <button
               onClick={() => setBillingInterval("monthly")}
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition-all duration-200 ${

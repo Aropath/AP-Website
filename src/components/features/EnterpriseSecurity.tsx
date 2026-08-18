@@ -40,20 +40,12 @@ export function EnterpriseFeatures() {
                 key={feature.title}
                 className="group relative flex h-full overflow-hidden rounded-2xl border border-[#E07A5F]/30 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:border-[#E07A5F]/70 hover:shadow-md"
               >
-                {/* Decorative background number */}
-                <span
-                  className="pointer-events-none absolute -right-3 -top-7 select-none font-display text-[110px] font-semibold leading-none text-[#E07A5F]/[0.055]"
-                  aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
                 <div className="relative flex w-full flex-col">
                   {/* Top row */}
                   <div className="relative flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E07A5F] shadow-sm transition-transform duration-300 group-hover:scale-105">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E07A5F] text-white transition-colors duration-300">
                       <Icon
-                        className="h-5 w-5 text-white"
+                        className="h-5 w-5"
                         strokeWidth={1.75}
                       />
                     </div>
@@ -92,13 +84,13 @@ export function Security() {
   return (
     <section
       id="security"
-      className="bg-bg-secondary/60 py-24"
+      className="py-24"
     >
       <Container>
         <div className="grid gap-14 lg:grid-cols-[1fr,1.3fr] lg:gap-16">
           <div>
             <Lock
-              className="h-[72px] w-[72px] text-gray-400"
+              className="h-[72px] w-[72px] text-[#A78BFA]"
               strokeWidth={1.5}
             />
 
@@ -113,20 +105,12 @@ export function Security() {
             </p>
           </div>
 
-          <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="grid gap-6 sm:grid-cols-2">
             {SECURITY_POINTS.map((point, index) => (
               <div
                 key={point.title}
                 className="group relative overflow-hidden rounded-2xl border border-line bg-card p-6 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-[#E07A5F]/50 hover:shadow-md"
               >
-                {/* Large faint background number */}
-                <span
-                  className="pointer-events-none absolute -right-2 -top-6 select-none font-display text-[120px] font-medium leading-none text-[#E07A5F]/[0.045]"
-                  aria-hidden="true"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-
                 {/* Top row */}
                 <div className="relative mb-5 flex items-center justify-between">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#E07A5F]/10 text-sm font-semibold text-[#E07A5F]">

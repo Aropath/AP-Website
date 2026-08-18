@@ -62,7 +62,7 @@ export function DocsContent() {
         </p>
         <div className="overflow-hidden rounded-xl2 border border-line">
           <table className="w-full text-sm">
-            <thead className="bg-bg-secondary text-left text-xs uppercase tracking-wide text-ink-muted">
+            <thead className="text-left text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-4 py-3">Endpoint</th>
                 <th className="px-4 py-3">Method</th>

@@ -15,7 +15,7 @@ type AIItem = typeof AI_CAPABILITIES[number];
 
 export function FeatureOverview() {
   return (
-    <section className="bg-bg-secondary/60 py-24">
+    <section className="py-24">
       <Container>
         <SectionHeader
           eyebrow="Overview"
@@ -61,7 +61,7 @@ function AICapabilityRow({ item, index, onClick }: { item: AIItem; index: number
         </span>
         
         <div className="flex items-center gap-4">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#A78BFA]/10 text-[#A78BFA] transition-colors duration-300 group-hover:bg-[#A78BFA] group-hover:text-white">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#A78BFA] text-white transition-colors duration-300">
             <Icon className="h-5 w-5" strokeWidth={1.75} />
           </div>
           <h3 className="font-display text-lg font-medium text-ink md:text-xl">
@@ -119,7 +119,7 @@ function AIModal({ item, onClose }: { item: AIItem; onClose: () => void }) {
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 rounded-full p-2 text-ink-muted transition-colors hover:bg-bg-secondary hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA]"
+          className="absolute right-4 top-4 rounded-full p-2 text-ink-muted transition-colors hover:hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-[#A78BFA]"
           aria-label="Close modal"
         >
           <X className="h-5 w-5" />
@@ -145,7 +145,7 @@ export function AICapabilities() {
   const [selectedItem, setSelectedItem] = useState<AIItem | null>(null);
 
   return (
-    <section className="bg-bg-secondary/60 py-24">
+    <section className="py-24">
       <Container>
         <SectionHeader
           eyebrow="AI Capabilities"

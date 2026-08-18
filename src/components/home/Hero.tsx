@@ -167,7 +167,7 @@ export function Hero() {
                 <span className="text-[10px] uppercase tracking-wider text-ink-muted">Active Sites</span>
                 <p className="text-2xl font-display font-medium text-ink mt-0.5">2,400+</p>
               </div>
-              <div className="rounded-xl2 bg-bg-secondary/70 p-4 border border-line">
+              <div className="rounded-xl2 /70 p-4 border border-line">
                 <span className="text-[10px] uppercase tracking-wider text-ink-muted">Weekly Traffic</span>
                 <div className="flex items-end gap-1.5 h-16 mt-2">
                   {[20, 35, 15, 45, 60, 30, 75, 40, 50, 85, 45].map((h, i) => (

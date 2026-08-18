@@ -86,15 +86,6 @@ export function FeatureCard({
                 backfaceVisibility: "hidden",
               }}
             >
-              {/* Large faint background number */}
-              <div
-                className="pointer-events-none absolute -right-2 -top-7 select-none"
-                aria-hidden="true"
-              >
-                <span className="font-display text-[150px] font-medium leading-none text-[#5DB29D]/[0.045]">
-                  {cardNumber}
-                </span>
-              </div>
 
               {/* Decorative oversized icon */}
               <div
@@ -158,15 +149,6 @@ export function FeatureCard({
                 transform: "rotateY(180deg)",
               }}
             >
-              {/* Large faint background number */}
-              <div
-                className="pointer-events-none absolute -right-2 -top-7 select-none"
-                aria-hidden="true"
-              >
-                <span className="font-display text-[150px] font-medium leading-none text-[#5DB29D]/[0.045]">
-                  {cardNumber}
-                </span>
-              </div>
 
               {/* Background decoration */}
               <div

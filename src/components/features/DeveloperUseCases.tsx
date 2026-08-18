@@ -49,7 +49,7 @@ export function DeveloperAPIs() {
 
 export function UseCases() {
   return (
-    <section className="bg-bg-secondary/60 py-24">
+    <section className="py-24">
       <Container>
         <SectionHeader
           eyebrow="Use cases"
@@ -70,13 +70,6 @@ export function UseCases() {
               custom={i}
               className="group relative overflow-hidden rounded-xl2 border border-[#78A899]/60 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-[#78A899] hover:shadow-md"
             >
-              {/* Faint background number */}
-              <span
-                className="pointer-events-none absolute -right-3 -top-7 select-none font-display text-[110px] font-semibold leading-none text-[#78A899]/[0.055]"
-                aria-hidden="true"
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
 
               {/* Use case tag */}
               <span className="relative inline-flex rounded-full border border-[#78A899]/50 bg-[#8FBFB0]/30 px-3 py-1 text-xs font-semibold text-[#18362D]">
