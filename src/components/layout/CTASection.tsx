@@ -19,9 +19,9 @@ export function CTASection({
 }: CTASectionProps) {
   return (
     <section
-      id="contact"
-      className="relative min-h-[calc(100vh-88px)] flex items-center overflow-hidden border-t border-line py-20"
-    >
+  id="contact"
+  className="relative min-h-[calc(100vh-88px)] flex items-center overflow-hidden py-20"
+>
       <GradientBlob className="left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 opacity-70" />
 
       <Container size="narrow" className="relative text-center">
@@ -51,7 +51,7 @@ export function CTASection({
                 <Button
                   variant="glass"
                   size="lg"
-                  className="hover:-translate-y-1"
+                  className="border border-black hover:-translate-y-1"
                 >
                   <span>Talk to Sales</span>
                 </Button>

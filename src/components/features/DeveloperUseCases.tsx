@@ -15,33 +15,39 @@ export function DeveloperAPIs() {
       id="developer-apis"
       className="bg-bg py-24"
     >
-      <Container className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <span className="text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
-            Developer Platforms
-          </span>
+      <Container>
+        {/* Developer Platforms capsule */}
+        <div className="mb-10 flex justify-center">
+  <span className="inline-flex items-center rounded-full border border-line bg-bg-secondary/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
+    Developer Platforms
+  </span>
+</div>
+        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-16">
+          {/* Left side */}
+          <div>
+            <h2 className="font-display text-display-lg font-medium text-ink">
+              Everything in the UI, available in code
+            </h2>
 
-          <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
-            Everything in the UI, available in code
-          </h2>
+            <ul className="mt-6 flex flex-col gap-3.5">
+              {DEVELOPER_FEATURES.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2.5 text-[0.95rem] text-ink-muted"
+                >
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
 
-          <ul className="mt-6 flex flex-col gap-3.5">
-            {DEVELOPER_FEATURES.map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2.5 text-[0.95rem] text-ink-muted"
-              >
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          {/* Code block */}
+          <CodeBlock
+            code={QUICKSTART_SNIPPET}
+            language="typescript"
+          />
         </div>
-
-        <CodeBlock
-          code={QUICKSTART_SNIPPET}
-          language="typescript"
-        />
       </Container>
     </section>
   );
@@ -70,7 +76,6 @@ export function UseCases() {
               custom={i}
               className="group relative overflow-hidden rounded-xl2 border border-[#78A899]/60 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-[#78A899] hover:shadow-md"
             >
-
               {/* Use case tag */}
               <span className="relative inline-flex rounded-full border border-[#78A899]/50 bg-[#8FBFB0]/30 px-3 py-1 text-xs font-semibold text-[#18362D]">
                 {useCase.tag}

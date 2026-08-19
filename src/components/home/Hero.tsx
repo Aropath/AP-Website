@@ -44,7 +44,8 @@ export function Hero() {
             ref={headingRef}
             className="max-w-5xl font-display text-display-xl font-medium text-ink text-balance"
           >
-             Smarter Revenue. <br /> Stronger Growth.
+             Smarter Revenue.
+             Stronger Growth.
 
           </h1>
 
@@ -67,13 +68,13 @@ export function Hero() {
           >
             <MagneticButton>
               <Button variant="navy" size="lg" withArrow>
-                Get Started Free
+                Talk to Sales
               </Button>
             </MagneticButton>
             <MagneticButton>
-              <Button variant="glass" size="lg" className="hover:-translate-y-1">
+              <Button variant="glass" size="lg" className="border border-black shadow-sm hover:-translate-y-1">
                 <span>Watch a 2-min demo</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4 text-black" />
               </Button>
             </MagneticButton>
           </motion.div>

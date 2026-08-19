@@ -3,7 +3,6 @@
 import { Lock } from "lucide-react";
 import { Container } from "@/components/layout/Container";
 import { SectionHeader } from "@/components/layout/SectionHeader";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import {
   ENTERPRISE_FEATURES,
   SECURITY_POINTS,
@@ -24,6 +23,7 @@ export function EnterpriseFeatures() {
       />
 
       <Container>
+        {/* Section Header */}
         <SectionHeader
           eyebrow="Built to support"
           title="Everything you need to get started and keep growing."
@@ -41,6 +41,14 @@ export function EnterpriseFeatures() {
                 className="group relative flex h-full overflow-hidden rounded-2xl border border-[#E07A5F]/30 bg-card p-7 shadow-soft transition-all duration-300 hover:-translate-y-2 hover:border-[#E07A5F]/70 hover:shadow-md"
               >
                 <div className="relative flex w-full flex-col">
+                  {/* Large faint background number */}
+                  <span
+                    className="pointer-events-none absolute -right-3 -top-7 select-none font-display text-[110px] font-semibold leading-none text-[#E07A5F]/[0.055]"
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
                   {/* Top row */}
                   <div className="relative flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#E07A5F] text-white transition-colors duration-300">
@@ -87,7 +95,15 @@ export function Security() {
       className="py-24"
     >
       <Container>
+        {/* Security capsule */}
+        <div className="mb-10 flex justify-center">
+  <span className="inline-flex items-center rounded-full border border-line bg-bg-secondary/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
+    Security
+  </span>
+</div>
+
         <div className="grid gap-14 lg:grid-cols-[1fr,1.3fr] lg:gap-16">
+          {/* Left side */}
           <div>
             <Lock
               className="h-[72px] w-[72px] text-[#A78BFA]"
@@ -105,6 +121,7 @@ export function Security() {
             </p>
           </div>
 
+          {/* Security points */}
           <dl className="grid gap-6 sm:grid-cols-2">
             {SECURITY_POINTS.map((point, index) => (
               <div

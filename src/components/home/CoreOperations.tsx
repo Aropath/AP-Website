@@ -21,13 +21,6 @@ export function CoreOperations() {
               key={operation.title}
               className="relative overflow-hidden rounded-xl2"
             >
-              {/* Faint background number */}
-              <span
-                className="pointer-events-none absolute right-2 top-0 z-10 select-none font-display text-[110px] font-semibold leading-none text-[#8A3A40]/[0.055]"
-                aria-hidden="true"
-              >
-                {String(i + 1).padStart(2, "0")}
-              </span>
 
               <FeatureCard
                 {...operation}
