@@ -2,13 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  MessageSquare,
-  Mail,
-  Phone,
-  MessageCircle,
-  X,
-} from "lucide-react";
+import { MessageSquare, X } from "lucide-react";
+import { siWhatsapp, siGmail } from "simple-icons";
 import { cn } from "@/lib/utils";
 
 export function BackToTop() {
@@ -25,41 +20,74 @@ export function BackToTop() {
             transition={{ duration: 0.2, ease: "easeOut" }}
             className="flex flex-col gap-3"
           >
-            {/* WhatsApp */}
+            {/* =========================
+                WHATSAPP
+            ========================= */}
             <motion.a
               href="#"
               className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-[#25D366] hover:bg-[#25D366]/10"
               aria-label="Contact on WhatsApp"
               title="WhatsApp"
             >
-              <MessageCircle className="h-5 w-5 text-[#111827] transition-colors group-hover:text-[#25D366]" />
+              <svg
+                role="img"
+                aria-label="WhatsApp"
+                viewBox="0 0 24 24"
+                className="h-5 w-5 transition-transform duration-200 group-hover:scale-110"
+                fill="currentColor"
+                style={{ color: "#25D366" }}
+              >
+                <path d={siWhatsapp.path} />
+              </svg>
             </motion.a>
 
-            {/* Call */}
+            {/* =========================
+                PHONE
+            ========================= */}
             <motion.a
               href="#"
-              className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-saffron-hover hover:bg-saffron/10"
+              className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-[#0D1524] hover:bg-[#0D1524]/10"
               aria-label="Call Us"
               title="Call Us"
             >
-              <Phone className="h-5 w-5 text-[#111827] transition-colors group-hover:text-saffron-hover" />
+              <svg
+                viewBox="0 0 24 24"
+                className="h-5 w-5 fill-[#0D1524] transition-transform duration-200 group-hover:scale-110"
+                aria-hidden="true"
+              >
+                <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1.5 1.5 0 011.53-.36c.99.33 2.05.5 3.14.5A1.92 1.92 0 0122 17.24v3.2A1.56 1.56 0 0120.44 22C10.29 22 2 13.71 2 3.56A1.56 1.56 0 013.56 2h3.2A1.92 1.92 0 018.5 3.92c0 1.09.17 2.15.5 3.14a1.5 1.5 0 01-.36 1.53l-2.02 2.2z" />
+              </svg>
             </motion.a>
 
-            {/* Email */}
+            {/* =========================
+                GMAIL
+            ========================= */}
             <motion.a
               href="#"
-              className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-teal-logo hover:bg-teal-logo/10"
+              className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-[#EA4335] hover:bg-[#EA4335]/10"
               aria-label="Email Us"
-              title="Email Us"
+              title="Gmail"
             >
-              <Mail className="h-5 w-5 text-[#111827] transition-colors group-hover:text-teal-logo" />
+              <svg
+                role="img"
+                aria-label="Gmail"
+                viewBox="0 0 24 24"
+                className="h-5 w-5 transition-transform duration-200 group-hover:scale-110"
+                fill="currentColor"
+                style={{ color: "#EA4335" }}
+              >
+                <path d={siGmail.path} />
+              </svg>
             </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Main contact button */}
+      {/* =========================
+          MAIN CONTACT BUTTON
+      ========================= */}
       <button
+        type="button"
         onClick={() => setOpen(!open)}
         className={cn(
           "flex h-14 w-14 items-center justify-center rounded-full shadow-card transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40",
@@ -68,6 +96,7 @@ export function BackToTop() {
             : "bg-[#0D1524] text-white hover:-translate-y-1 hover:shadow-lg"
         )}
         aria-label="Open contact menu"
+        aria-expanded={open}
       >
         <AnimatePresence mode="wait">
           {open ? (

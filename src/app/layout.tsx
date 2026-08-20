@@ -1,22 +1,27 @@
 import type { Metadata } from "next";
 import "./globals.css";
+
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollProgressBar } from "@/components/layout/ScrollProgressBar";
 import { BackToTop } from "@/components/layout/BackToTop";
 import { SmoothScrollProvider } from "@/components/layout/SmoothScrollProvider";
 import { GradientBlob } from "@/components/ui/GradientBlob";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 
 const SITE_URL = "https://aropath.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+
   title: {
     default: "AroPath — The path from data to revenue",
     template: "%s · AroPath",
   },
+
   description:
     "AroPath is the AI-native website analytics platform that automatically tracks user sessions and conversion drop-offs to generate a prioritized, actionable growth plan to lift site revenue.",
+
   keywords: [
     "AI website analytics",
     "conversion optimization",
@@ -24,6 +29,7 @@ export const metadata: Metadata = {
     "session tracking",
     "AroPath",
   ],
+
   openGraph: {
     title: "AroPath — The path from data to revenue",
     description:
@@ -40,6 +46,7 @@ export const metadata: Metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: "AroPath — The path from data to revenue",
@@ -56,21 +63,63 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning className="bg-bg font-body text-ink antialiased">
+      <body
+        suppressHydrationWarning
+        className="bg-bg font-body text-ink antialiased"
+      >
+        {/* Skip to content */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-4 focus:py-2 focus:text-bg"
         >
           Skip to content
         </a>
+
         <SmoothScrollProvider>
-          <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-            <GradientBlob variant="blush" className="left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 opacity-60" />
+          {/* =========================================
+              GLOBAL CURSOR BLUSH
+              Visible across every page
+          ========================================= */}
+          <div
+            className="pointer-events-none fixed inset-0 z-[1]"
+            aria-hidden="true"
+          >
+            <CursorGlow />
           </div>
+
+          {/* =========================================
+              FIXED TOP CORNER BLUSH
+              ========================================= */}
+          <div
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+            aria-hidden="true"
+          >
+            {/* Top-left blush */}
+            <GradientBlob
+              variant="blush"
+              className="left-0 top-0 h-[650px] w-[650px] -translate-x-1/3 -translate-y-1/3 opacity-50"
+            />
+
+            {/* Top-right blush */}
+            <GradientBlob
+              variant="blush"
+              className="right-0 top-0 h-[650px] w-[650px] translate-x-1/3 -translate-y-1/3 opacity-50"
+            />
+          </div>
+
+          {/* Scroll progress */}
           <ScrollProgressBar />
+
+          {/* Navigation */}
           <Navbar />
+
+          {/* Main content */}
           <main id="main-content">{children}</main>
+
+          {/* Footer */}
           <Footer />
+
+          {/* Floating contact button */}
           <BackToTop />
         </SmoothScrollProvider>
       </body>

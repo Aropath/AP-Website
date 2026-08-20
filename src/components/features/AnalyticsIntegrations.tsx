@@ -90,8 +90,11 @@ export function Integrations() {
                 role="img"
                 aria-label={name}
                 viewBox="0 0 24 24"
-                className="h-10 w-10 text-ink-muted transition-colors duration-300 group-hover:text-ink"
+                className="h-10 w-10 transition-transform duration-300 group-hover:scale-110"
                 fill="currentColor"
+                style={{
+                  color: `#${icon.hex}`,
+                }}
               >
                 <path d={icon.path} />
               </svg>

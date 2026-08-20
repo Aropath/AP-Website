@@ -24,6 +24,9 @@ export function About() {
           <span className="inline-flex items-center rounded-full border border-line bg-card px-3.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink-muted">
             About
           </span>
+          <h2 className="mt-4 font-display text-display-lg font-medium text-ink">
+            We started with one belief: &quot;Build products that create measurable impact.&quot;
+          </h2>
         </motion.div>
 
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
