@@ -90,10 +90,10 @@ export function BackToTop() {
         type="button"
         onClick={() => setOpen(!open)}
         className={cn(
-          "flex h-14 w-14 items-center justify-center rounded-full shadow-card transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40",
+          "flex h-14 w-14 items-center justify-center rounded-full border-2 border-white shadow-card transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ink/40",
           open
-            ? "border border-line bg-card text-ink hover:bg-saffron/20"
-            : "bg-[#0D1524] text-white hover:-translate-y-1 hover:shadow-lg"
+            ? "bg-card text-ink hover:bg-saffron/20"
+            : "bg-[#0D1524] text-white shadow-lg hover:-translate-y-1"
         )}
         aria-label="Open contact menu"
         aria-expanded={open}
